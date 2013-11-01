@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Autofac.Integration.Mvc;
+using Peach.Web.Bootstrapping;
 
 namespace Peach.Web
 {
@@ -12,7 +10,15 @@ namespace Peach.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // Register routes
+            new RouteRegistrator().RegisterRoutes(RouteTable.Routes);
+
+            // Build DI container
+            var dependencyRegistrator = new DependencyRegistrator();
+            var container = dependencyRegistrator.BuildContainer();
+
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
 }

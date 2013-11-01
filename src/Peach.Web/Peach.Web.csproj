@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\packages\Autofac.Mvc5.3.0.0\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -83,8 +89,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Bootstrapping\DependencyRegistrator.cs" />
+    <Compile Include="Bootstrapping\RouteRegistrator.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PluginsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -95,6 +104,8 @@
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\HadoukenLayout.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Plugins\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,6 +116,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Peach.Core\Peach.Core.csproj">
+      <Project>{9043B1C5-E3D8-4043-9F6F-05AD3F29F015}</Project>
+      <Name>Peach.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peach.Data.Sql\Peach.Data.Sql.csproj">
+      <Project>{88F0DACF-1B9F-4A75-89F0-BDA922239918}</Project>
+      <Name>Peach.Data.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peach.Data\Peach.Data.csproj">
+      <Project>{F53A6266-F22D-4D36-8E78-21024E1C4F52}</Project>
+      <Name>Peach.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

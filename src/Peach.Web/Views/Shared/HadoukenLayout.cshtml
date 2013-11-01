@@ -1,4 +1,19 @@
-﻿<!DOCTYPE html>
+﻿@helper MainMenuLink(string action, string controller, string title)
+{
+    var url = Url.Action(action, controller);
+    var currentUrl = Request.Path;
+
+    if (url == currentUrl)
+    {
+        @Html.Raw("<li class=\"active\"><a href=\"" + url + "\">" + title + "</a></li>")
+    }
+    else
+    {
+        @Html.Raw("<li><a href=\"" + url + "\">" + title + "</a></li>")
+    }
+}
+
+<!DOCTYPE html>
 
 <html>
     <head>
@@ -14,9 +29,10 @@
         <div class="container">
             <div class="header">
                 <ul class="nav nav-pills pull-right">
-                    <li><a href="#">Home</a></li>
+                    @MainMenuLink("Index", "Home", "Home")
+                    @MainMenuLink("Index", "Blog", "Blog")
                     <li><a href="#">Features</a></li>
-                    <li><a href="#">Plugins <span class="badge">13</span></a></li>
+                    @MainMenuLink("Index", "Plugins", "Plugins")
                 </ul>
                 
                 <h3 class="text-muted">Hadouken</h3>
