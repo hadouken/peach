@@ -1,0 +1,50 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Hadouken — A headless BitTorrent client for Windows";
+}
+
+<div class="jumbotron">
+    <h1>Hadouken</h1>
+    
+    <p class="lead">
+        Hadouken is a headless BitTorrent client for Windows. It is written
+        in C# and is designed to run as a Windows Service managed through a
+        built-in web interface.
+    </p>
+    
+    <p>
+        <a class="btn btn-lg btn-success" href="@Url.Action("Index", "Downloads")">Get it now!</a>
+    </p>
+</div>
+
+<div class="row marketing">
+    <div class="col-lg-6">
+        <h4><i class="fa fa-github"></i> Open source</h4>
+        <p>
+            We believe in open source and so should you. <a href="#">The source code for Hadouken</a>
+            is hosted on GitHub and includes everything needed to build it yourself.
+        </p>
+        
+        <h4><i class="fa fa-puzzle-piece"></i> Plugins, plugins and plugins</h4>
+        <p>
+            In Hadouken, plugins are first-class citizens. In fact, we believe so much in plugins that
+            much of the core functionality is implemented as plugins. Plugins are easy to install and
+            maintain, and we have loads of them!
+        </p>
+    </div>
+    
+    <div class="col-lg-6">
+        <h4><i class="fa fa-group"></i> Community driven</h4>
+        <p>
+            It is the community that makes Hadouken so frickin' awesome. Ideas, plugins and general epicness
+            all comes from the community. We &lt;3 you.
+        </p>
+        
+        <h4><i class="fa fa-smile-o"></i> No ads, no bullshit</h4>
+        <p>
+            We aim to make you happy, and that is why you will never see ads on this site, in the installer
+            or in the web interface. We also do not try to shove crapware and toolbars down your throat.
+        </p>
+    </div>
+</div>
