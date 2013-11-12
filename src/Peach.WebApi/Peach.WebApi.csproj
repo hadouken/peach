@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapping\WebApiConfig.cs" />
     <Compile Include="Controllers\PluginsController.cs" />
+    <Compile Include="Controllers\ReleasesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
