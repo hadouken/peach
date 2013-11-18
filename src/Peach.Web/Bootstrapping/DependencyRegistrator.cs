@@ -11,7 +11,7 @@ namespace Peach.Web.Bootstrapping
             var builder = new ContainerBuilder();
 
             // Register modules
-            builder.RegisterModule<SqlModule>();
+            builder.RegisterModule(new SqlModule(null));
 
             // Register MVC controllers
             builder.RegisterControllers(this.GetType().Assembly);

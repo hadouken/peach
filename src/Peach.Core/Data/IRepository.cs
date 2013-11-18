@@ -4,7 +4,6 @@
     {
         void Insert(T item);
         void Update(T item);
-        void InsertOrUpdate(T item);
         void Delete(T item);
 
         T GetById(object id);
