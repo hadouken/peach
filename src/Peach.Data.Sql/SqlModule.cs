@@ -31,6 +31,9 @@ namespace Peach.Data.Sql
             // Register ISession
             _lifetimeProvider.RequestScope(builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()));
 
+            // Register ISchemaMigrator
+            _lifetimeProvider.SingletonScope(builder.RegisterType<SqlSchemaMigrator>().As<ISchemaMigrator>());
+
             // Register repositories
             _lifetimeProvider.InstanceScope(builder.RegisterType<BlogRepository>().AsImplementedInterfaces());
             _lifetimeProvider.InstanceScope(builder.RegisterType<PluginRepository>().AsImplementedInterfaces());
