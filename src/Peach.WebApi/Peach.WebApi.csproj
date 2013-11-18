@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\packages\Autofac.3.1.5\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\..\packages\Autofac.WebApi2.3.0.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -93,7 +99,20 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Peach.Core\Peach.Core.csproj">
+      <Project>{9043B1C5-E3D8-4043-9F6F-05AD3F29F015}</Project>
+      <Name>Peach.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peach.Data.Sql\Peach.Data.Sql.csproj">
+      <Project>{88F0DACF-1B9F-4A75-89F0-BDA922239918}</Project>
+      <Name>Peach.Data.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Peach.Data\Peach.Data.csproj">
+      <Project>{F53A6266-F22D-4D36-8E78-21024E1C4F52}</Project>
+      <Name>Peach.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

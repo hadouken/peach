@@ -8,6 +8,7 @@ namespace Peach.Data.Sql
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<BlogRepository>().AsImplementedInterfaces();
+            builder.RegisterType<PluginRepository>().AsImplementedInterfaces();
         }
     }
 }

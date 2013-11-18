@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Repositories\BlogRepository.cs" />
+    <Compile Include="Repositories\PluginRepository.cs" />
     <Compile Include="SqlModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

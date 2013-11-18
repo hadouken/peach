@@ -1,35 +1,29 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using Peach.Data;
 
 namespace Peach.WebApi.Controllers
 {
     public class PluginsController : ApiController
     {
-        // GET api/<controller>
+        private readonly IPluginRepository _pluginRepository;
+
+        public PluginsController(IPluginRepository pluginRepository)
+        {
+            _pluginRepository = pluginRepository;
+        }
+
+        // GET plugins/
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        // GET plugins/plugin.name
+        [Route("plugins/{pluginId}")]
+        public string Get(string pluginId)
         {
             return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
         }
     }
 }

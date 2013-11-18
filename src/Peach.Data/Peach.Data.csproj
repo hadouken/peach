@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BlogPost.cs" />
+    <Compile Include="Domain\Plugin.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="IBlogRepository.cs" />
+    <Compile Include="IPluginRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
