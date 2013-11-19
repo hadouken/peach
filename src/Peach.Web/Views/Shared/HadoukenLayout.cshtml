@@ -41,8 +41,14 @@
             
             @if (User.Identity.IsAuthenticated)
             {
-                <div class="subheader pull-right">
-                    <small>@User.Identity.Name</small>
+                <div class="subheader">
+                    <div class="pull-left">
+                        
+                    </div>
+                    
+                    <div class="pull-right">
+                        <small>@User.Identity.Name</small>
+                    </div>
                 </div>
             }
             

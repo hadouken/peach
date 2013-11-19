@@ -59,8 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISchemaMigrator.cs" />
+    <Compile Include="Mappings\BlogPostMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Migrations\001_Create_Users_Table.cs" />
+    <Compile Include="Migrations\002_Create_BlogPosts_Table.cs" />
     <Compile Include="Repositories\BlogRepository.cs" />
     <Compile Include="Repositories\PluginRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />

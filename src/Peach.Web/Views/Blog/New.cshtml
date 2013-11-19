@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "New blog post - Hadouken";
+}
+
+<h3>Write new blog post</h3>
+
+<p>Share your feelings or whatever.</p>
+
+<form class="form-horizontal" role="form" action="@Url.Action("New")" method="POST">
+    <div class="form-group">
+        <label for="title" class="control-label col-lg-2">Title</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="title" name="title" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="content" class="control-label col-lg-2">Content</label>
+        <div class="col-lg-10">
+            <textarea class="form-control" id="content" name="content" rows="20"></textarea>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Create post</button>
+        </div>
+    </div>
+</form>

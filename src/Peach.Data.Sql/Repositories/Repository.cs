@@ -4,7 +4,7 @@ using Peach.Core.Data;
 
 namespace Peach.Data.Sql.Repositories
 {
-    public class Repository<T> : IRepository<T>, IDisposable
+    public class Repository<T> : IRepository<T>
     {
         private readonly ISession _session;
 
@@ -48,12 +48,6 @@ namespace Peach.Data.Sql.Repositories
         public T GetById(object id)
         {
             return _session.Get<T>(id);
-        }
-
-        public void Dispose()
-        {
-            _session.Flush();
-            _session.Close();
         }
     }
 }
