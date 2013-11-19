@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Web.Mvc;
+using System.Web.Security;
 using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OpenId;
 using DotNetOpenAuth.OpenId.RelyingParty;
 using Peach.Data;
+using Peach.Data.Domain;
 
 namespace Peach.Web.Controllers
 {
@@ -20,6 +22,42 @@ namespace Peach.Web.Controllers
         public ActionResult SignIn()
         {
             return View();
+        }
+
+        public ActionResult New()
+        {
+            if (Session["ClaimedIdentifier"] == null)
+                return HttpNotFound();
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult New(string userName)
+        {
+            if (Session["ClaimedIdentifier"] == null)
+                return HttpNotFound();
+
+            if (String.IsNullOrEmpty(userName))
+                return View();
+
+            userName = userName.Trim();
+
+            if (_userRepository.GetByUserName(userName) != null)
+                return View();
+
+            var user = new User
+            {
+                ClaimedIdentifier = Session["ClaimedIdentifier"].ToString(),
+                UserName = userName
+            };
+
+            _userRepository.Insert(user);
+            Session.Remove("ClaimedIdentifier");
+
+            FormsAuthentication.SetAuthCookie(user.Id.ToString(), true);
+
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Authenticate(string returnUrl)
@@ -51,7 +89,21 @@ namespace Peach.Web.Controllers
             switch (response.Status)
             {
                 case AuthenticationStatus.Authenticated:
-                    throw new Exception("Authenticated");
+                    // Find user with claimed identifier. If null, redirect to /users/new
+                    var user = _userRepository.GetByClaimedIdentifier(response.ClaimedIdentifier);
+
+                    if (user == null)
+                    {
+                        Session.Add("ClaimedIdentifier", response.ClaimedIdentifier);
+                        return RedirectToAction("New");
+                    }
+
+                    FormsAuthentication.SetAuthCookie(user.Id.ToString(), true);
+
+                    if (!String.IsNullOrEmpty(returnUrl))
+                        return Redirect(returnUrl);
+
+                    return RedirectToAction("Index", "Home");
 
                 case AuthenticationStatus.Canceled:
                     TempData["Flash"] = "Canceled at provider.";

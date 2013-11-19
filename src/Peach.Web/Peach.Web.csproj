@@ -226,6 +226,7 @@
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Plugins\Index.cshtml" />
     <Content Include="Views\Users\SignIn.cshtml" />
+    <Content Include="Views\Users\New.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

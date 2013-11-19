@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "New user - Hadouken";
+}
+
+<h3>New user account</h3>
+
+<p>
+    Since this is the first time you are signing with this OpenId, please pick a display name below.
+</p>
+
+<form class="form-horizontal" role="form" action="@Url.Action("New")" method="POST">
+    <div class="form-group">
+        <label for="userName" class="col-lg-3 control-label">User Name</label>
+        <div class="col-lg-9">
+            <input type="text" class="form-control" id="userName" name="userName" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-3 col-lg-9">
+            <button type="submit" class="btn btn-primary">Create account</button>
+        </div>
+    </div>
+</form>
