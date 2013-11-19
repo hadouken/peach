@@ -8,8 +8,8 @@ namespace Peach.Data.Sql.Mappings
         public UserMap()
         {
             Id(x => x.Id);
-            Map(x => x.ClaimedIdentifier).Not.Nullable();
-            Map(x => x.UserName).Not.Nullable();
+            Map(x => x.ClaimedIdentifier).Not.Nullable().Length(400);
+            Map(x => x.UserName).Not.Nullable().Length(100);
         }
     }
 }

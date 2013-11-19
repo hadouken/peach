@@ -44,7 +44,31 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\..\packages\Autofac.Mvc5.3.0.0\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\..\packages\DotNetOpenAuth.Core.4.3.3.13295\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Mvc5">
+      <HintPath>..\..\packages\DotNetOpenAuth.Mvc5.4.3.3.13295\lib\net45-full\DotNetOpenAuth.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.Core.4.3.3.13295\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.3.13295\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -61,6 +85,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Validation">
+      <HintPath>..\..\packages\Validation.2.0.2.13022\lib\portable-windows8+net40+sl5+windowsphone8\Validation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -83,8 +110,98 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\openid-selector\images.large\aol.gif" />
+    <Content Include="Content\openid-selector\images.large\facebook.gif" />
+    <Content Include="Content\openid-selector\images.large\google.gif" />
+    <Content Include="Content\openid-selector\images.large\mailru.gif" />
+    <Content Include="Content\openid-selector\images.large\myopenid.gif" />
+    <Content Include="Content\openid-selector\images.large\openid.gif" />
+    <Content Include="Content\openid-selector\images.large\rambler.gif" />
+    <Content Include="Content\openid-selector\images.large\verisign.gif" />
+    <Content Include="Content\openid-selector\images.large\vkontakte.gif" />
+    <Content Include="Content\openid-selector\images.large\yahoo.gif" />
+    <Content Include="Content\openid-selector\images.large\yandex.gif" />
+    <Content Include="Content\openid-selector\images.small\aol.ico" />
+    <Content Include="Content\openid-selector\images.small\aol.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\aol.ico.png" />
+    <Content Include="Content\openid-selector\images.small\blogger.ico" />
+    <Content Include="Content\openid-selector\images.small\blogger.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\blogger.ico.png" />
+    <Content Include="Content\openid-selector\images.small\claimid.ico" />
+    <Content Include="Content\openid-selector\images.small\claimid.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\claimid.ico.png" />
+    <Content Include="Content\openid-selector\images.small\clickpass.ico" />
+    <Content Include="Content\openid-selector\images.small\clickpass.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\clickpass.ico.png" />
+    <Content Include="Content\openid-selector\images.small\facebook.ico" />
+    <Content Include="Content\openid-selector\images.small\facebook.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\facebook.ico.png" />
+    <Content Include="Content\openid-selector\images.small\flickr.ico" />
+    <Content Include="Content\openid-selector\images.small\flickr.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\flickr.ico.png" />
+    <Content Include="Content\openid-selector\images.small\google.ico" />
+    <Content Include="Content\openid-selector\images.small\google.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\google.ico.png" />
+    <Content Include="Content\openid-selector\images.small\google_profile.ico" />
+    <Content Include="Content\openid-selector\images.small\google_profile.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\google_profile.ico.png" />
+    <Content Include="Content\openid-selector\images.small\launchpad.ico" />
+    <Content Include="Content\openid-selector\images.small\launchpad.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\launchpad.ico.png" />
+    <Content Include="Content\openid-selector\images.small\linkedin.ico" />
+    <Content Include="Content\openid-selector\images.small\linkedin.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\linkedin.ico.png" />
+    <Content Include="Content\openid-selector\images.small\livejournal.ico" />
+    <Content Include="Content\openid-selector\images.small\livejournal.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\livejournal.ico.png" />
+    <Content Include="Content\openid-selector\images.small\mailru.ico" />
+    <Content Include="Content\openid-selector\images.small\mailru.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\mailru.ico.png" />
+    <Content Include="Content\openid-selector\images.small\myopenid.ico" />
+    <Content Include="Content\openid-selector\images.small\myopenid.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\myopenid.ico.png" />
+    <Content Include="Content\openid-selector\images.small\openid.ico" />
+    <Content Include="Content\openid-selector\images.small\openid.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\openid.ico.png" />
+    <Content Include="Content\openid-selector\images.small\rambler.ico" />
+    <Content Include="Content\openid-selector\images.small\rambler.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\rambler.ico.png" />
+    <Content Include="Content\openid-selector\images.small\technorati.ico" />
+    <Content Include="Content\openid-selector\images.small\technorati.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\technorati.ico.png" />
+    <Content Include="Content\openid-selector\images.small\twitter.ico" />
+    <Content Include="Content\openid-selector\images.small\twitter.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\twitter.ico.png" />
+    <Content Include="Content\openid-selector\images.small\verisign.ico" />
+    <Content Include="Content\openid-selector\images.small\verisign.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\verisign.ico.png" />
+    <Content Include="Content\openid-selector\images.small\vidoop.ico" />
+    <Content Include="Content\openid-selector\images.small\vidoop.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\vidoop.ico.png" />
+    <Content Include="Content\openid-selector\images.small\vkontakte.ico" />
+    <Content Include="Content\openid-selector\images.small\vkontakte.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\vkontakte.ico.png" />
+    <Content Include="Content\openid-selector\images.small\winliveid.ico" />
+    <Content Include="Content\openid-selector\images.small\winliveid.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\winliveid.ico.png" />
+    <Content Include="Content\openid-selector\images.small\wordpress.ico" />
+    <Content Include="Content\openid-selector\images.small\wordpress.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\wordpress.ico.png" />
+    <Content Include="Content\openid-selector\images.small\yahoo.ico" />
+    <Content Include="Content\openid-selector\images.small\yahoo.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\yahoo.ico.png" />
+    <Content Include="Content\openid-selector\images.small\yandex.ico" />
+    <Content Include="Content\openid-selector\images.small\yandex.ico.gif" />
+    <Content Include="Content\openid-selector\images.small\yandex.ico.png" />
+    <Content Include="Content\openid-selector\images\openid-inputicon.gif" />
+    <Content Include="Content\openid-selector\images\openid-providers-en.png" />
+    <Content Include="Content\openid-selector\images\openid-providers-ru.png" />
+    <Content Include="Content\openid-selector\openid-shadow.css" />
+    <Content Include="Content\openid-selector\openid.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Users.SignIn\openid-en.js" />
+    <Content Include="Scripts\Users.SignIn\openid-jquery.js" />
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
@@ -95,6 +212,7 @@
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PluginsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -107,6 +225,7 @@
     <Content Include="Views\Shared\HadoukenLayout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Plugins\Index.cshtml" />
+    <Content Include="Views\Users\SignIn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +276,11 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

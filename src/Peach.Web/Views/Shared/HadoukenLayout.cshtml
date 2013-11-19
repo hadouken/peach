@@ -23,6 +23,7 @@
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+        @RenderSection("Styles", false)
     </head>
 
     <body>
@@ -40,5 +41,8 @@
             
             @RenderBody()
         </div>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        @RenderSection("Scripts", false)
     </body>
 </html>
