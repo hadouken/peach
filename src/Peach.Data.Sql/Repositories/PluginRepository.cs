@@ -1,36 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NHibernate;
+using Peach.Data.Domain;
 
 namespace Peach.Data.Sql.Repositories
 {
-    public class PluginRepository : IPluginRepository
+    public class PluginRepository : Repository<Plugin>, IPluginRepository
     {
-        public void Insert(Domain.Plugin item)
+        public PluginRepository(ISession session) : base(session)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Domain.Plugin item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void InsertOrUpdate(Domain.Plugin item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Domain.Plugin item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Domain.Plugin GetById(object id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

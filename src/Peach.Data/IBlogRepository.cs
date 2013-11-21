@@ -5,5 +5,6 @@ namespace Peach.Data
 {
     public interface IBlogRepository : IRepository<BlogPost>
     {
+        BlogPost GetByYearMonthAndSlug(int year, int month, string slug);
     }
 }

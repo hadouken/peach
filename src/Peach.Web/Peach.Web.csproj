@@ -200,6 +200,8 @@
     <Content Include="Content\openid-selector\openid.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery.timeago.js" />
+    <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\Users.SignIn\openid-en.js" />
     <Content Include="Scripts\Users.SignIn\openid-jquery.js" />
     <Content Include="Web.config" />
@@ -216,6 +218,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BlogListDto.cs" />
     <Compile Include="Models\NewBlogPostDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

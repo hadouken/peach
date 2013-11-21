@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using Peach.Core.Text;
 using Peach.Data.Sql;
 
 namespace Peach.Web.Bootstrapping
@@ -16,6 +17,9 @@ namespace Peach.Web.Bootstrapping
 
             // Register MVC controllers
             builder.RegisterControllers(this.GetType().Assembly);
+
+            // Register slug generator
+            builder.RegisterType<SlugGenerator>().AsImplementedInterfaces().InstancePerDependency();
 
             return builder.Build();
         }
