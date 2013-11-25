@@ -200,6 +200,7 @@
     <Content Include="Content\openid-selector\openid.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Features.Index\holder.js" />
     <Content Include="Scripts\jquery.timeago.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Scripts\Users.SignIn\openid-en.js" />
@@ -212,6 +213,7 @@
     <Compile Include="Bootstrapping\LifetimeProvider.cs" />
     <Compile Include="Bootstrapping\RouteRegistrator.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\FeaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PluginsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -232,6 +234,8 @@
     <Content Include="Views\Users\SignIn.cshtml" />
     <Content Include="Views\Users\New.cshtml" />
     <Content Include="Views\Blog\New.cshtml" />
+    <Content Include="Views\Blog\Details.cshtml" />
+    <Content Include="Views\Features\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

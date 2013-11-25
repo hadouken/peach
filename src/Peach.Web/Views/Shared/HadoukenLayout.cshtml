@@ -7,6 +7,10 @@
     {
         @Html.Raw("<li class=\"active\"><a href=\"" + url + "\">" + title + "</a></li>")
     }
+    else if (url != null && currentUrl.StartsWith(url) && url != "/")
+    {
+        @Html.Raw("<li class=\"active\"><a href=\"" + url + "\">" + title + "</a></li>")
+    }
     else
     {
         @Html.Raw("<li><a href=\"" + url + "\">" + title + "</a></li>")
@@ -32,7 +36,7 @@
                 <ul class="nav nav-pills pull-right">
                     @MainMenuLink("Index", "Home", "Home")
                     @MainMenuLink("Index", "Blog", "Blog")
-                    <li><a href="#">Features</a></li>
+                    @MainMenuLink("Index", "Features", "Features")
                     @MainMenuLink("Index", "Plugins", "Plugins")
                 </ul>
                 
@@ -56,6 +60,7 @@
         </div>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
         <script src="~/Scripts/jquery.timeago.js"></script>
         <script src="~/Scripts/Site.js"></script>
         @RenderSection("Scripts", false)
