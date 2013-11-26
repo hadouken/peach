@@ -60,12 +60,15 @@
   <ItemGroup>
     <Compile Include="ISchemaMigrator.cs" />
     <Compile Include="Mappings\BlogPostMap.cs" />
+    <Compile Include="Mappings\RoleMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
     <Compile Include="Migrations\001_Create_Users_Table.cs" />
+    <Compile Include="Migrations\003_Create_Roles_Table.cs" />
     <Compile Include="Migrations\002_Create_BlogPosts_Table.cs" />
     <Compile Include="Repositories\BlogRepository.cs" />
     <Compile Include="Repositories\PluginRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="SqlModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

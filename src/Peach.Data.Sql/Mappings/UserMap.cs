@@ -12,6 +12,13 @@ namespace Peach.Data.Sql.Mappings
             Id(x => x.Id);
             Map(x => x.ClaimedIdentifier).Not.Nullable().Length(400);
             Map(x => x.UserName).Not.Nullable().Length(100);
+
+            // User->Roles
+            HasManyToMany(x => x.Roles)
+                .Table("Users_Roles")
+                .ParentKeyColumn("User_Id")
+                .ChildKeyColumn("Role_Id")
+                .Cascade.All();
         }
     }
 }

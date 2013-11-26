@@ -46,6 +46,7 @@
     <Compile Include="Domain\User.cs" />
     <Compile Include="IBlogRepository.cs" />
     <Compile Include="IPluginRepository.cs" />
+    <Compile Include="IRoleRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

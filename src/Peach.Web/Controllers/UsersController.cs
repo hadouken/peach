@@ -13,10 +13,12 @@ namespace Peach.Web.Controllers
     {
         private static readonly OpenIdRelyingParty OpenId = new OpenIdRelyingParty();
         private readonly IUserRepository _userRepository;
+        private readonly IRoleRepository _roleRepository;
 
-        public UsersController(IUserRepository userRepository)
+        public UsersController(IUserRepository userRepository, IRoleRepository roleRepository)
         {
             _userRepository = userRepository;
+            _roleRepository = roleRepository;
         }
 
         public ActionResult SignIn()
@@ -51,6 +53,12 @@ namespace Peach.Web.Controllers
                 ClaimedIdentifier = Session["ClaimedIdentifier"].ToString(),
                 UserName = userName
             };
+
+            if (_userRepository.Count() == 0)
+            {
+                var administratorRole = _roleRepository.GetByName(Role.Administrator);
+                user.Roles.Add(administratorRole);
+            }
 
             _userRepository.Insert(user);
             Session.Remove("ClaimedIdentifier");
