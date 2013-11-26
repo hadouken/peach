@@ -51,9 +51,11 @@
                     </div>
                     
                     <div class="pull-right">
-                        <small>@User.Identity.Name</small>
+                        @User.Identity.Name (@Html.ActionLink("sign out", "SignOut", "Users"))
                     </div>
                 </div>
+                
+                <div class="clearfix"></div>
             }
             
             @RenderBody()

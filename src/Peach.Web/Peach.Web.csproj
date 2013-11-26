@@ -223,6 +223,7 @@
     </Compile>
     <Compile Include="HttpModules\UserAuthModule.cs" />
     <Compile Include="Models\BlogListDto.cs" />
+    <Compile Include="Models\EditBlogPostDto.cs" />
     <Compile Include="Models\NewBlogPostDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -238,6 +239,7 @@
     <Content Include="Views\Blog\New.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Features\Index.cshtml" />
+    <Content Include="Views\Blog\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

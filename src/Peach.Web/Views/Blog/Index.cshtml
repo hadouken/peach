@@ -1,7 +1,16 @@
-﻿@model Peach.Web.Models.BlogListDto
+﻿@using Peach.Data.Domain
+@model Peach.Web.Models.BlogListDto
 
 @{
     ViewBag.Title = "Blog - Hadouken";
+}
+
+@if (User.IsInRole(Role.ContentWriter))
+{ 
+    @section Actions
+    {
+        @Html.ActionLink("New blog post", "New") 
+    }
 }
 
 @foreach (var post in Model.BlogPosts)

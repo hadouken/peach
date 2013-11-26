@@ -26,6 +26,13 @@ namespace Peach.Web.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult SignOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
         public ActionResult New()
         {
             if (Session["ClaimedIdentifier"] == null)

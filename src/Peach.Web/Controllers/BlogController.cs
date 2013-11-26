@@ -76,7 +76,7 @@ namespace Peach.Web.Controllers
 
             var currentUser = _userRepository.GetById(Convert.ToInt32(User.Identity.Name));
 
-            var post = new BlogPost()
+            var post = new BlogPost
             {
                 Content = dto.Content,
                 PublishedDate = DateTime.Now,
@@ -88,6 +88,50 @@ namespace Peach.Web.Controllers
             _blogRepository.Insert(post);
 
             return RedirectToAction("Index");
+        }
+
+        [Authorize(Roles = Role.ContentWriter)]
+        public ActionResult Edit(int id)
+        {
+            var blogPost = _blogRepository.GetById(id);
+
+            if (blogPost == null)
+                return HttpNotFound();
+
+            var model = new EditBlogPostDto
+            {
+                Id = blogPost.Id,
+                Content = blogPost.Content,
+                Title = blogPost.Title
+            };
+
+            return View(model);
+        }
+
+        [Authorize(Roles = Role.ContentWriter)]
+        [HttpPost]
+        public ActionResult Edit(int id, EditBlogPostDto dto)
+        {
+            if (!ModelState.IsValid)
+                return View(dto);
+
+            var blogPost = _blogRepository.GetById(id);
+
+            if (blogPost == null)
+                return HttpNotFound();
+
+            blogPost.Content = dto.Content;
+            blogPost.Title = dto.Title;
+
+            _blogRepository.Update(blogPost);
+
+            return RedirectToAction("Details",
+                new
+                {
+                    year = blogPost.PublishedDate.Year.ToString(),
+                    month = blogPost.PublishedDate.Month.ToString().PadLeft(2, '0'),
+                    slug = blogPost.Slug
+                });
         }
     }
 }

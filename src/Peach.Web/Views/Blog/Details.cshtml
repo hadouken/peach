@@ -1,7 +1,16 @@
-﻿@model Peach.Data.Domain.BlogPost
+﻿@using Peach.Data.Domain
+@model Peach.Data.Domain.BlogPost
 
 @{
     ViewBag.Title = Model.Title + " - Hadouken";
+}
+
+@if (User.IsInRole(Role.ContentWriter))
+{
+@section Actions
+    {
+        @Html.ActionLink("Edit blog post", "Edit", new{id = Model.Id})
+    }
 }
 
 <h3>@Model.Title</h3>

@@ -1,0 +1,29 @@
+﻿@model Peach.Web.Models.EditBlogPostDto
+
+@{
+    ViewBag.Title = "Edit blog post - Hadouken";
+}
+
+<h3>Edit '@(Model.Title)'</h3>
+
+<form class="form-horizontal" role="form" action="@Url.Action("Edit", new{id=Model.Id})" method="POST">
+    <div class="form-group">
+        <label for="title" class="control-label col-lg-2">Title</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="title" name="title" value="@Model.Title" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="content" class="control-label col-lg-2">Content</label>
+        <div class="col-lg-10">
+            <textarea class="form-control" id="content" name="content" rows="20">@Model.Content</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+</form>
