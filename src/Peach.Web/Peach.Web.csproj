@@ -210,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapping\DependencyRegistrator.cs" />
+    <Compile Include="Bootstrapping\HttpModuleBootstrapper.cs" />
     <Compile Include="Bootstrapping\LifetimeProvider.cs" />
     <Compile Include="Bootstrapping\RouteRegistrator.cs" />
     <Compile Include="Controllers\BlogController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HttpModules\UserAuthModule.cs" />
     <Compile Include="Models\BlogListDto.cs" />
     <Compile Include="Models\NewBlogPostDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

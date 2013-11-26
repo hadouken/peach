@@ -54,10 +54,10 @@ namespace Peach.Web.Controllers
                 UserName = userName
             };
 
+            // The first user should be added to all roles
             if (_userRepository.Count() == 0)
             {
-                var administratorRole = _roleRepository.GetByName(Role.Administrator);
-                user.Roles.Add(administratorRole);
+                user.Roles.AddRange(_roleRepository.GetAll());
             }
 
             _userRepository.Insert(user);

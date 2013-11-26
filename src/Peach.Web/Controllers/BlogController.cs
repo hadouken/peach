@@ -61,13 +61,14 @@ namespace Peach.Web.Controllers
             return View(post);
         }
 
-        [Authorize]
+        [Authorize(Roles = Role.ContentWriter)]
         public ActionResult New()
         {
             return View();
         }
 
-        [Authorize, HttpPost]
+        [Authorize(Roles = Role.ContentWriter)]
+        [HttpPost]
         public ActionResult New(NewBlogPostDto dto)
         {
             if (!ModelState.IsValid)
