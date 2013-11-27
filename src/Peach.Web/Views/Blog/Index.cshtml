@@ -1,4 +1,5 @@
 ﻿@using Peach.Data.Domain
+@using Peach.Web.Extensions
 @model Peach.Web.Models.BlogListDto
 
 @{
@@ -17,7 +18,7 @@
 {
     <div class="post">
         <h3>
-            @Html.ActionLink(post.Title, "Details", new{year=post.PublishedDate.Year,month=post.PublishedDate.Month.ToString().PadLeft(2, '0'),slug=post.Slug})
+            @Html.ActionLink(post.Title, "Details", post.GetRouteData())
             <small class="timeago" title="@post.PublishedDate.ToString("yyyy-MM-ddTHH:mm:sszzz")"></small>
         </h3>
         @post.Content
@@ -32,6 +33,13 @@
     
     @if (Model.HasNextPage)
     {
-        <li class="next"><a href="#">Newer &rarr;</a></li>
+        if (Model.CurrentPage - 1 == 1)
+        {
+            <li class="next"><a href="/blog">&rarr; Newer</a></li>       
+        }
+        else
+        {
+            <li class="next"><a href="/blog/page/@(Model.CurrentPage - 1)">&rarr; Newer</a></li>       
+        }
     }
 </ul>

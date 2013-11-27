@@ -6,6 +6,7 @@ using Peach.Core;
 using Peach.Core.Text;
 using Peach.Data;
 using Peach.Data.Domain;
+using Peach.Web.Extensions;
 using Peach.Web.Models;
 
 namespace Peach.Web.Controllers
@@ -125,13 +126,7 @@ namespace Peach.Web.Controllers
 
             _blogRepository.Update(blogPost);
 
-            return RedirectToAction("Details",
-                new
-                {
-                    year = blogPost.PublishedDate.Year.ToString(),
-                    month = blogPost.PublishedDate.Month.ToString().PadLeft(2, '0'),
-                    slug = blogPost.Slug
-                });
+            return RedirectToAction("Details", blogPost.GetRouteData());
         }
     }
 }
