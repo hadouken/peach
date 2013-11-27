@@ -11,6 +11,7 @@ using Peach.Web.Models;
 
 namespace Peach.Web.Controllers
 {
+    [RoutePrefix("blog")]
     public class BlogController : Controller
     {
         private readonly IBlogRepository _blogRepository;
@@ -33,8 +34,8 @@ namespace Peach.Web.Controllers
             }
         }
 
-        [Route("blog/")]
-        [Route("blog/page/{page}")]
+        [Route("")]
+        [Route("page/{page}")]
         public ActionResult Index(int page = 1)
         {
             var posts = _blogRepository.GetPage(post => post.PublishedDate, SortOrder.Descending, page - 1, _pageSize);
@@ -51,7 +52,7 @@ namespace Peach.Web.Controllers
             return View(model);
         }
 
-        [Route("blog/{year}/{month}/{slug}")]
+        [Route("{year}/{month}/{slug}")]
         public ActionResult Details(int year, int month, string slug)
         {
             var post = _blogRepository.GetByYearMonthAndSlug(year, month, slug);
