@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Diagnostics\ILogger.cs" />
+    <Compile Include="Diagnostics\LoggingExtensions.cs" />
     <Compile Include="Diagnostics\LogLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Runtime\ILifetimeProvider.cs" />
