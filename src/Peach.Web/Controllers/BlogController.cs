@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 using System.Linq;
 using System.Web.Mvc;
 using Peach.Core;
@@ -12,25 +11,26 @@ using Peach.Web.Models;
 namespace Peach.Web.Controllers
 {
     [RoutePrefix("blog")]
-    public class BlogController : Controller
+    public class BlogController : PeachController
     {
         private readonly IBlogRepository _blogRepository;
         private readonly IUserRepository _userRepository;
         private readonly ISlugGenerator _slugGenerator;
 
-        private readonly int _pageSize = 10;
+        private readonly int _defaultPageSize = 10;
 
-        public BlogController(IBlogRepository blogRepository, IUserRepository userRepository, ISlugGenerator slugGenerator)
+        public BlogController(IBlogRepository blogRepository, IUserRepository userRepository, ISlugGenerator slugGenerator, IConfiguration configuration)
+            : base(userRepository)
         {
             _blogRepository = blogRepository;
             _userRepository = userRepository;
             _slugGenerator = slugGenerator;
 
-            var configPageSize = ConfigurationManager.AppSettings["Blog:PageSize"];
+            var configPageSize = configuration.Settings["Blog:PageSize"];
 
             if (!String.IsNullOrEmpty(configPageSize))
             {
-                _pageSize = Convert.ToInt32(configPageSize);
+                _defaultPageSize = Convert.ToInt32(configPageSize);
             }
         }
 
@@ -38,7 +38,7 @@ namespace Peach.Web.Controllers
         [Route("page/{page}")]
         public ActionResult Index(int page = 1)
         {
-            var posts = _blogRepository.GetPage(post => post.PublishedDate, SortOrder.Descending, page - 1, _pageSize);
+            var posts = _blogRepository.GetPage(post => post.PublishedDate, SortOrder.Descending, page - 1, _defaultPageSize);
             var count = _blogRepository.Count();
 
             var model = new BlogListDto
@@ -46,7 +46,7 @@ namespace Peach.Web.Controllers
                 BlogPosts = posts.ToArray(),
                 CurrentPage = page,
                 HasNextPage = (page > 1),
-                HasPreviousPage = (count > page*_pageSize),
+                HasPreviousPage = (count > page*_defaultPageSize),
             };
 
             return View(model);

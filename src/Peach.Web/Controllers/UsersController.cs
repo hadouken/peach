@@ -9,13 +9,14 @@ using Peach.Data.Domain;
 
 namespace Peach.Web.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : PeachController
     {
         private static readonly OpenIdRelyingParty OpenId = new OpenIdRelyingParty();
         private readonly IUserRepository _userRepository;
         private readonly IRoleRepository _roleRepository;
 
         public UsersController(IUserRepository userRepository, IRoleRepository roleRepository)
+            : base(userRepository)
         {
             _userRepository = userRepository;
             _roleRepository = roleRepository;
