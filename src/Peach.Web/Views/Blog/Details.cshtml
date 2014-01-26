@@ -5,9 +5,15 @@
     ViewBag.Title = Model.Title + " - Hadouken";
 }
 
+@helper Markdown(string input)
+{
+    var md = new MarkdownSharp.Markdown().Transform(input);
+    @(new HtmlString(md))
+}
+
 @if (User.IsInRole(Role.ContentWriter))
 {
-@section Actions
+    @section Actions
     {
         @Html.ActionLink("Edit blog post", "Edit", new{id = Model.Id})
     }
@@ -15,4 +21,4 @@
 
 <h3>@Model.Title</h3>
 
-@Model.Content
+@Markdown(Model.Content)

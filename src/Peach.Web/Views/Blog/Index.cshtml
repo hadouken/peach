@@ -6,6 +6,12 @@
     ViewBag.Title = "Blog - Hadouken";
 }
 
+@helper Markdown(string input)
+{
+    var md = new MarkdownSharp.Markdown().Transform(input);
+    @(new HtmlString(md))
+}
+
 @if (User.IsInRole(Role.ContentWriter))
 { 
     @section Actions
@@ -21,7 +27,7 @@
             @Html.ActionLink(post.Title, "Details", post.GetRouteData())
             <small class="timeago" title="@post.PublishedDate.ToString("yyyy-MM-ddTHH:mm:sszzz")"></small>
         </h3>
-        @post.Content
+        @Markdown(post.Content)
     </div>
 }
 
