@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BlogPost.cs" />
-    <Compile Include="Domain\Feature.cs" />
     <Compile Include="Domain\Plugin.cs" />
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\User.cs" />

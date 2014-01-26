@@ -110,6 +110,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Features\Plugins.png" />
+    <Content Include="Content\Features\Setup.png" />
+    <Content Include="Content\Features\TorrentConfig.png" />
     <Content Include="Content\openid-selector\images.large\aol.gif" />
     <Content Include="Content\openid-selector\images.large\facebook.gif" />
     <Content Include="Content\openid-selector\images.large\google.gif" />
