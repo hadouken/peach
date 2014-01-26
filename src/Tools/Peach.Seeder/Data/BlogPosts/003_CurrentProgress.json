@@ -1,0 +1,20 @@
+﻿{
+  "title": "Current progress",
+  "slug": "current-progress",
+  "date": "2013-09-26 22:35:32",
+  "content": "If you've been following me on GitHub you'd know that progress is being made. One of the things I'm working on right now is the different plugins - the torrent plugin takes a lot of my time since it is the most complex.
+
+Apart from plugins, the core is almost ready. It needs some stability enhancements and plugin validations, but all in all, it works as expected and I can focus on writing the core plugins of which there will be four.
+
+ * Config - provides a key/value store service.
+ * Events - a SignalR hub which publishes events to clients.
+ * Torrents - the big BitTorrent plugin which enables all BitTorrent downloads.
+ * WebUI - provides the GUI for plugins to build upon. If you want a really slick Hadouken installation you could in theory disable this plugin and only communicate with Hadouken over JSONRPC since the WebUI is just that - a web-based user interface.
+ * Plugin repository - builds upon the WebUI and adds a way to browse, install and update plugins from within your own Hadouken web interface.
+
+As soon as we hit the release button for 2.0, plugins will have their own release cycle and fixes will be published as bugs are fixed and features developed.
+
+Since the web-based UI builds upon Twitter's Bootstrap framework I'll make sure to have it mobile-friendly from start so you can easily remote manage your Hadouken instance.
+
+If you have any questions or feature requests - just send me a comment!"
+}

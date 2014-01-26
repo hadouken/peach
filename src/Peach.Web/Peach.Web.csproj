@@ -69,6 +69,7 @@
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.18\lib\net45\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -217,6 +218,7 @@
     <Compile Include="Bootstrapping\LifetimeProvider.cs" />
     <Compile Include="Bootstrapping\RouteRegistrator.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\FeaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeachController.cs" />
@@ -245,6 +247,7 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Features\Index.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Download\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

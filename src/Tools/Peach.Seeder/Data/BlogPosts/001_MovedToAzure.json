@@ -1,0 +1,16 @@
+﻿{
+  "title": "Moved to Azure!",
+  "slug": "moved-to-azure",
+  "date": "2013-08-25 21:16:27",
+  "content": "Fellow BitTorrent users,
+
+The past weekend I've been working on this here new site. It is built using .NET MVC 4 and other sweet technologies. I've decided to move the website (and API) to Windows Azure. Both the main website and the API is now contained in the same source code tree (located at GitHub as well), so I can manage them better.
+
+I like Azure's automated deployments which makes it really easy to go from development to production :) I had a similar setup in TeamCity for the API but it was a hack and didn't work as well as I wanted to. Now I have automated deployments with database migrations and the works.
+
+The forum is also down for the moment, and the wiki is moved to the GitHub project page. This to gather up loose ends and make it easier to contribute since the wiki on GitHub is closer to the source code in a way.
+
+The next few days will contain design tweaking and moving of all old blog posts to the new database.
+
+/V"
+}

@@ -1,0 +1,19 @@
+﻿{
+  "title": "Remaining work items",
+  "slug": "remaining-work-items",
+  "date": "2013-10-22 00:01:50",
+  "content": "I'm currently working on getting the plugin repository in place. It will be hosted right here on this site, and you will be able to browse it both directly from Hadouken as well as here.
+
+This is a list of the large work items that remain before a 2.0 release can be made;
+
+ * Finish the torrent plugin. Right now it doesn't save state when closing Hadouken.
+ * Write build scripts and an MSI package.
+ * Make plugins upgradeable. Right now you can only update them manually.
+ * Finish the new site+plugin repository.
+
+The most important one (IMO) is the plugin repository, which must be stable and working correctly at all times. As long as this plugin is stable, I will be able to fix bugs quite easily by just publishing them. You will then get a notification in your Hadouken instance that a plugin has updates available, which you can install directly. I'm gonna try to get screenshots of this in the coming days.
+
+In other words, I've began documenting the new and [highly awesome JSONRPC API](https://github.com/hadouken/hdkn/blob/develop/docs/extending/jsonrpc/index.md). Check it!
+
+:)"
+}

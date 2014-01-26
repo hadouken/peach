@@ -1,0 +1,12 @@
+﻿{
+  "title": "Memory management and usage in Hadouken 2.0",
+  "slug": "memory-management-and-usage-in-hadouken-20",
+  "date": "2013-11-18 12:21:21",
+  "content": "This last month has been quite busy with work and not so much Hadouken development as I wanted to get done.
+
+However, I've gotten the chance to work a bit with it the last week or so and it is really coming together nicely. For those that are unaware, plugins are packaged as zip files now, and they are loaded completely in memory and run in their own AppDomains which means that memory management is much easier. Unfortunately, it also means that memory usage is up.
+
+As of right now, Hadouken (with the core plugins `web`, `torrents`, `config` and `httpjsonrpc`) takes about 120-130MB of memory. I really don't see this as a problem since most machines today will have quite a bit of memory available. Memory usage will go up with each plugin you add as well. If I disable the `web` plugin, I reduce memory usage to right below 100MB. So depending on your configuration, your usage will vary.
+
+What is your opinion on memory usage?"
+}

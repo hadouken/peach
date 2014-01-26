@@ -1,0 +1,20 @@
+﻿{
+  "title": "Development news",
+  "slug": "development-news",
+  "date": "2013-09-09 08:09:14",
+  "content": "So, I've been working a bit with the new 2.0 stuff and it is coming along nicely. One great thing is that almost everything is a plugin in this version, even the torrent engine and plugin repository.
+
+This will make it so much easier to keep your client up to date since you can update almost everything from within the web interface.
+
+The JSONRPC server will be much more powerful than the existing API, and you will be able to listen to any event on the SignalR event hub, which is also a plugin. Amazing.
+
+The web interface (which is also a plugin) will be written on top of Twitters excellent Bootstrap framework, and it will react to events much the same as any other plugin since they listen to the same event hub.
+
+New plugins can be installed via the plugin repository in your local Hadouken instance. From there you can search, find and install plugins from any author. I will also make it easy for users to browse plugins from right here on the website.
+
+One thing I'm working with now is documentation for plugin developers. This needs to be as good as possible to encourage developers to write plugins.
+
+I will write some basic plugins, like AutoAdd, AutoMove and RSS. From there I will take suggestions from users.
+
+What would you like to see in 2.0?"
+}

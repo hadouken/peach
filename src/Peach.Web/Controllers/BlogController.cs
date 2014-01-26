@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.ServiceModel.Syndication;
+using System.Text;
 using System.Web.Mvc;
+using System.Xml;
 using Peach.Core;
 using Peach.Core.Text;
 using Peach.Data;
@@ -16,6 +21,7 @@ namespace Peach.Web.Controllers
         private readonly IBlogRepository _blogRepository;
         private readonly IUserRepository _userRepository;
         private readonly ISlugGenerator _slugGenerator;
+        private readonly IConfiguration _configuration;
 
         private readonly int _defaultPageSize = 10;
 
@@ -25,6 +31,7 @@ namespace Peach.Web.Controllers
             _blogRepository = blogRepository;
             _userRepository = userRepository;
             _slugGenerator = slugGenerator;
+            _configuration = configuration;
 
             var configPageSize = configuration.Settings["Blog:PageSize"];
 
@@ -50,6 +57,60 @@ namespace Peach.Web.Controllers
             };
 
             return View(model);
+        }
+
+        [Route("feed/{format}")]
+        public ActionResult Feed(string format)
+        {
+            var posts = _blogRepository.GetAll().OrderByDescending(b => b.PublishedDate);
+            var items = new List<SyndicationItem>();
+
+            foreach (var post in posts)
+            {
+                var feedItem = new SyndicationItem
+                {
+                    Content = new TextSyndicationContent(post.Content),
+                    Id = post.Id.ToString(),
+                    PublishDate = post.PublishedDate,
+                    Title = new TextSyndicationContent(post.Title),
+                };
+
+                var url = String.Format(_configuration.Settings["Blog:UrlTemplate"],
+                    post.PublishedDate.Year,
+                    post.PublishedDate.Month.ToString().PadLeft(2, '0'),
+                    post.Slug);
+
+                feedItem.Links.Add(new SyndicationLink(new Uri(url)));
+
+                items.Add(feedItem);
+            }
+
+            var feed = new SyndicationFeed(items);
+            feed.Title = new TextSyndicationContent("Hadouken", TextSyndicationContentKind.Plaintext);
+            feed.Description = new TextSyndicationContent("The Hadouken BitTorrent client blog feed",
+                TextSyndicationContentKind.Plaintext);
+
+            using (var ms = new MemoryStream())
+            {
+                var writer = XmlWriter.Create(ms);
+                var contentType = "application/atom+xml";
+
+                if (String.Equals("rss", format, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    feed.SaveAsRss20(writer);
+                    contentType = "application/rss+xml";
+                }
+                else
+                {
+                    feed.SaveAsAtom10(writer);                    
+                }
+
+                writer.Flush();
+
+                var text = Encoding.UTF8.GetString(ms.ToArray());
+
+                return Content(text, contentType, Encoding.UTF8);
+            }
         }
 
         [Route("{year}/{month}/{slug}")]

@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peach.Data", "src\Peach.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peach.Data.Sql", "src\Peach.Data.Sql\Peach.Data.Sql.csproj", "{88F0DACF-1B9F-4A75-89F0-BDA922239918}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{1FB67DD1-90CC-41C4-8DA5-BB5D753B033F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peach.Seeder", "src\Tools\Peach.Seeder\Peach.Seeder.csproj", "{43924718-1395-445C-BFB4-9BE1C7BC9BF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{88F0DACF-1B9F-4A75-89F0-BDA922239918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88F0DACF-1B9F-4A75-89F0-BDA922239918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88F0DACF-1B9F-4A75-89F0-BDA922239918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43924718-1395-445C-BFB4-9BE1C7BC9BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43924718-1395-445C-BFB4-9BE1C7BC9BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43924718-1395-445C-BFB4-9BE1C7BC9BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43924718-1395-445C-BFB4-9BE1C7BC9BF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,5 +61,6 @@ Global
 		{88F0DACF-1B9F-4A75-89F0-BDA922239918} = {0DC0E7E4-0136-4B62-8C31-958E65602D62}
 		{3CECFDE7-143E-4BDF-909D-E02D3604A992} = {60F5EFEE-0520-42AA-AAE5-0ECB9489B42E}
 		{E2285DE0-1D97-4C47-A443-C885812D44DD} = {60F5EFEE-0520-42AA-AAE5-0ECB9489B42E}
+		{43924718-1395-445C-BFB4-9BE1C7BC9BF7} = {1FB67DD1-90CC-41C4-8DA5-BB5D753B033F}
 	EndGlobalSection
 EndGlobal
