@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Peach.Core;
 using Peach.Data;
 using Peach.Data.Domain;
 using Peach.Web.Models;
@@ -9,8 +10,8 @@ namespace Peach.Web.Controllers
     {
         private readonly IReleaseRepository _releaseRepository;
 
-        public DownloadController(IUserRepository userRepository, IReleaseRepository releaseRepository)
-            : base(userRepository)
+        public DownloadController(IConfiguration configuration, IUserRepository userRepository, IReleaseRepository releaseRepository)
+            : base(configuration, userRepository)
         {
             _releaseRepository = releaseRepository;
         }

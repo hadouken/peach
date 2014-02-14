@@ -26,7 +26,7 @@ namespace Peach.Web.Controllers
         private readonly int _defaultPageSize = 10;
 
         public BlogController(IBlogRepository blogRepository, IUserRepository userRepository, ISlugGenerator slugGenerator, IConfiguration configuration)
-            : base(userRepository)
+            : base(configuration, userRepository)
         {
             _blogRepository = blogRepository;
             _userRepository = userRepository;

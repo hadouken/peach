@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Peach.Core;
 using Peach.Data;
 using Peach.Data.Domain;
 
@@ -6,8 +7,8 @@ namespace Peach.Web.Controllers
 {
     public class FeaturesController : PeachController
     {
-        public FeaturesController(IUserRepository userRepository)
-            : base(userRepository) { }
+        public FeaturesController(IConfiguration configuration, IUserRepository userRepository)
+            : base(configuration, userRepository) { }
 
         public ActionResult Index()
         {

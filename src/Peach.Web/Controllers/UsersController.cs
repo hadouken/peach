@@ -4,6 +4,7 @@ using System.Web.Security;
 using DotNetOpenAuth.Messaging;
 using DotNetOpenAuth.OpenId;
 using DotNetOpenAuth.OpenId.RelyingParty;
+using Peach.Core;
 using Peach.Data;
 using Peach.Data.Domain;
 
@@ -15,8 +16,8 @@ namespace Peach.Web.Controllers
         private readonly IUserRepository _userRepository;
         private readonly IRoleRepository _roleRepository;
 
-        public UsersController(IUserRepository userRepository, IRoleRepository roleRepository)
-            : base(userRepository)
+        public UsersController(IConfiguration configuration, IUserRepository userRepository, IRoleRepository roleRepository)
+            : base(configuration, userRepository)
         {
             _userRepository = userRepository;
             _roleRepository = roleRepository;
