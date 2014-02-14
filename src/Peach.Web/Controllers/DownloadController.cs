@@ -21,11 +21,13 @@ namespace Peach.Web.Controllers
             return View(release);
         }
 
+        [Authorize(Roles = Role.Administrator)]
         public ActionResult New()
         {
             return View(new NewReleaseDto());
         }
 
+        [Authorize(Roles = Role.Administrator)]
         [HttpPost]
         public ActionResult New(NewReleaseDto dto)
         {
