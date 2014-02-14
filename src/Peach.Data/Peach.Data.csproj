@@ -41,10 +41,12 @@
   <ItemGroup>
     <Compile Include="Domain\BlogPost.cs" />
     <Compile Include="Domain\Plugin.cs" />
+    <Compile Include="Domain\Release.cs" />
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="IBlogRepository.cs" />
     <Compile Include="IPluginRepository.cs" />
+    <Compile Include="IReleaseRepository.cs" />
     <Compile Include="IRoleRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

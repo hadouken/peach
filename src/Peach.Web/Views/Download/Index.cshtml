@@ -1,7 +1,33 @@
-﻿@model dynamic
+﻿@using Peach.Data.Domain
+@model Release
 
 @{
     ViewBag.Title = "Download | Hadouken";
 }
 
-<h3>hdkn-2.0.0-build.123.msi</h3>
+@if (User.IsInRole(Role.Administrator))
+{ 
+    @section Actions
+    {
+        @Html.ActionLink("New release", "New")
+    }   
+}
+
+@if (Model != null)
+{ 
+
+<div class="bs-callout bs-callout-warning">
+    <h4>We are currently in beta</h4>
+    <p>The available version of Hadouken is beta software. This means it can possibly crash and you may lose data. We try our best to make sure this does not happen, and we run Hadouken
+        ourselves as well to find any current problems.</p>
+</div>
+
+<div class="download-col">
+    <a class="btn btn-large btn-success" href="@Model.DownloadUri">Download Hadouken @Model.Version</a>
+</div>
+
+<h3>System requirements</h3>
+
+    <p>Hadouken requires <a href="http://www.microsoft.com/net">.NET 4.5</a> and should run on any machine where this is available. It also requires a browser to access the web interface
+        after installation.</p>
+}

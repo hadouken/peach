@@ -1,0 +1,32 @@
+﻿@using Peach.Web.Models
+@model NewReleaseDto
+
+@{
+    ViewBag.Title = "New release | Hadouken";
+}
+
+<h3>Create a new release</h3>
+
+<p>Make sure it's stable! :)</p>
+
+<form class="form-horizontal" role="form" action="@Url.Action("New")" method="POST">
+    <div class="form-group">
+        <label for="version" class="control-label col-lg-2">Version</label>
+        <div class="col-lg-2">
+            <input type="text" class="form-control" id="version" name="version" value="@Model.Version" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="downloadUri" class="control-label col-lg-2">Uri</label>
+        <div class="col-lg-10">
+            <input type="url" class="form-control" id="downloadUri" name="downloadUri" placeholder="http://" value="@Model.DownloadUri" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Create new release</button>
+        </div>
+    </div>
+</form>

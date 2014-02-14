@@ -39,6 +39,7 @@ namespace Peach.Data.Sql
             _lifetimeProvider.InstanceScope(builder.RegisterType<PluginRepository>().AsImplementedInterfaces());
             _lifetimeProvider.InstanceScope(builder.RegisterType<UserRepository>().AsImplementedInterfaces());
             _lifetimeProvider.InstanceScope(builder.RegisterType<RoleRepository>().AsImplementedInterfaces());
+            _lifetimeProvider.InstanceScope(builder.RegisterType<ReleaseRepository>().AsImplementedInterfaces());
         }
 
         private void RunMigrations(IActivatingEventArgs<ISessionFactory> activatingEventArgs)
