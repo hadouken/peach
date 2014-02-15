@@ -32,24 +32,24 @@
   <ItemGroup>
     <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
+      <HintPath>..\..\..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="FluentMigrator, Version=1.1.2.1, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\FluentMigrator.1.1.2.1\lib\40\FluentMigrator.dll</HintPath>
+      <HintPath>..\..\..\packages\FluentMigrator.1.1.2.1\lib\40\FluentMigrator.dll</HintPath>
     </Reference>
     <Reference Include="FluentMigrator.Runner">
-      <HintPath>..\..\packages\FluentMigrator.Tools.1.1.2.1\tools\AnyCPU\40\FluentMigrator.Runner.dll</HintPath>
+      <HintPath>..\..\..\packages\FluentMigrator.Tools.1.1.2.1\tools\AnyCPU\40\FluentMigrator.Runner.dll</HintPath>
     </Reference>
     <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+      <HintPath>..\..\..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections">
-      <HintPath>..\..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+      <HintPath>..\..\..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate">
-      <HintPath>..\..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+      <HintPath>..\..\..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -86,11 +86,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Peach.Core\Peach.Core.csproj">
-      <Project>{9043B1C5-E3D8-4043-9F6F-05AD3F29F015}</Project>
+      <Project>{9043b1c5-e3d8-4043-9f6f-05ad3f29f015}</Project>
       <Name>Peach.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Peach.Data\Peach.Data.csproj">
-      <Project>{F53A6266-F22D-4D36-8E78-21024E1C4F52}</Project>
+      <Project>{f53a6266-f22d-4d36-8e78-21024e1c4f52}</Project>
       <Name>Peach.Data</Name>
     </ProjectReference>
   </ItemGroup>

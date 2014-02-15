@@ -82,18 +82,17 @@
     </Content>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\Peach.Core\Peach.Core.csproj">
-      <Project>{9043B1C5-E3D8-4043-9F6F-05AD3F29F015}</Project>
+    <ProjectReference Include="..\..\Main\Peach.Core\Peach.Core.csproj">
+      <Project>{9043b1c5-e3d8-4043-9f6f-05ad3f29f015}</Project>
       <Name>Peach.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Peach.Data.Sql\Peach.Data.Sql.csproj">
-      <Project>{88F0DACF-1B9F-4A75-89F0-BDA922239918}</Project>
+    <ProjectReference Include="..\..\Main\Peach.Data.Sql\Peach.Data.Sql.csproj">
+      <Project>{88f0dacf-1b9f-4a75-89f0-bda922239918}</Project>
       <Name>Peach.Data.Sql</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Peach.Data\Peach.Data.csproj">
-      <Project>{F53A6266-F22D-4D36-8E78-21024E1C4F52}</Project>
+    <ProjectReference Include="..\..\Main\Peach.Data\Peach.Data.csproj">
+      <Project>{f53a6266-f22d-4d36-8e78-21024e1c4f52}</Project>
       <Name>Peach.Data</Name>
     </ProjectReference>
   </ItemGroup>

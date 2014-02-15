@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Peach.Core\Peach.Core.csproj">
-      <Project>{9043B1C5-E3D8-4043-9F6F-05AD3F29F015}</Project>
+      <Project>{9043b1c5-e3d8-4043-9f6f-05ad3f29f015}</Project>
       <Name>Peach.Core</Name>
     </ProjectReference>
   </ItemGroup>
