@@ -10,9 +10,11 @@ namespace Peach.WebApi.Bootstrapping
     {
         public static void Register(HttpConfiguration config)
         {
+            var lifetimeProvider = new LifetimeProvider();
+
             // Web API configuration and services
             var builder = new ContainerBuilder();
-            builder.RegisterModule(new SqlModule(null));
+            builder.RegisterModule(new SqlModule(lifetimeProvider));
             builder.RegisterApiControllers(typeof (WebApiConfig).Assembly);
 
             var container = builder.Build();
