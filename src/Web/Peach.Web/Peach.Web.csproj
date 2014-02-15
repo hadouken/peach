@@ -287,6 +287,10 @@
       <Project>{F53A6266-F22D-4D36-8E78-21024E1C4F52}</Project>
       <Name>Peach.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Main\Peach.IO.Azure\Peach.IO.Azure.csproj">
+      <Project>{D110F7CB-CD9A-4EF8-9928-9573A84C3B05}</Project>
+      <Name>Peach.IO.Azure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

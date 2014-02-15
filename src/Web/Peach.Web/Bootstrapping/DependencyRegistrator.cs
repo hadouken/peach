@@ -3,6 +3,7 @@ using Autofac.Integration.Mvc;
 using Peach.Core;
 using Peach.Core.Text;
 using Peach.Data.Sql;
+using Peach.IO.Azure;
 
 namespace Peach.Web.Bootstrapping
 {
@@ -15,6 +16,7 @@ namespace Peach.Web.Bootstrapping
 
             // Register modules
             builder.RegisterModule(new SqlModule(lifetimeProvider));
+            builder.RegisterModule(new AzureModule(lifetimeProvider));
 
             // Register MVC controllers
             builder.RegisterControllers(this.GetType().Assembly);

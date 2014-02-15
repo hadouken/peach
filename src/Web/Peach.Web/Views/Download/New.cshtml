@@ -9,7 +9,7 @@
 
 <p>Make sure it's stable! :)</p>
 
-<form class="form-horizontal" role="form" action="@Url.Action("New")" method="POST">
+<form class="form-horizontal" role="form" action="@Url.Action("New")" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <label for="version" class="control-label col-lg-2">Version</label>
         <div class="col-lg-2">
@@ -18,15 +18,9 @@
     </div>
     
     <div class="form-group">
-        <label for="downloadUri" class="control-label col-lg-2">Uri</label>
+        <label for="attachedFiles" class="control-label col-lg-2">Files</label>
         <div class="col-lg-10">
-            <input type="url" class="form-control" id="downloadUris_1" name="downloadUris" placeholder="http://" value="" />
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <div class="col-lg-offset-2 col-lg-10">
-            <input type="url" class="form-control" id="downloadUris_2" name="downloadUris" placeholder="http://" value="" />
+            <input type="file" class="form-control" id="attachedFiles" name="attachedFiles" multiple="multiple" />
         </div>
     </div>
     

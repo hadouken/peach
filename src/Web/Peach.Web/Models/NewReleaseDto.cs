@@ -1,5 +1,5 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace Peach.Web.Models
 {
@@ -9,7 +9,7 @@ namespace Peach.Web.Models
         public string Version { get; set; }
 
         [Required]
-        public Uri[] DownloadUris { get; set; }
+        public HttpPostedFileBase[] AttachedFiles { get; set; }
 
         [Required]
         public string ReleaseNotes { get; set; }
