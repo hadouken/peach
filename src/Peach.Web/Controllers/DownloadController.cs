@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using Peach.Core;
 using Peach.Data;
 using Peach.Data.Domain;
@@ -39,9 +40,14 @@ namespace Peach.Web.Controllers
 
             var release = new Release
             {
-                DownloadUri = dto.DownloadUri,
+                ReleaseNotes = dto.ReleaseNotes,
                 Version = dto.Version
             };
+
+            foreach (var uri in dto.DownloadUris)
+            {
+                release.Files.Add(new ReleaseFile {DownloadUri = uri, Release = release});
+            }
 
             _releaseRepository.Insert(release);
 

@@ -9,6 +9,9 @@ namespace Peach.Web.Models
         public string Version { get; set; }
 
         [Required]
-        public Uri DownloadUri { get; set; }
+        public Uri[] DownloadUris { get; set; }
+
+        [Required]
+        public string ReleaseNotes { get; set; }
     }
 }

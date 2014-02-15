@@ -11,9 +11,11 @@ namespace Peach.Data.Sql.Mappings
 
             Id(x => x.Id);
 
-            Map(x => x.DownloadUri).Length(500).Not.Nullable();
             Map(x => x.ReleaseDate).Not.Nullable();
+            Map(x => x.ReleaseNotes).Not.Nullable();
             Map(x => x.Version).Length(100).Not.Nullable();
+
+            HasMany(x => x.Files).Cascade.AllDeleteOrphan();
         }
     }
 }

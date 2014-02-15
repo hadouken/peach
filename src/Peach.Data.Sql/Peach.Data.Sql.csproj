@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="ISchemaMigrator.cs" />
     <Compile Include="Mappings\BlogPostMap.cs" />
+    <Compile Include="Mappings\ReleaseFileMap.cs" />
     <Compile Include="Mappings\ReleaseMap.cs" />
     <Compile Include="Mappings\RoleMap.cs" />
     <Compile Include="Mappings\UserMap.cs" />
