@@ -13,7 +13,7 @@ namespace Peach.Data.Sql.Migrations
                 .WithColumn("ClaimedIdentifier").AsString(400).NotNullable().Unique()
                 .WithColumn("UserName").AsString(100).NotNullable().Unique();
 
-            Create.PrimaryKey("PK_Id").OnTable("Users").Column("Id").Clustered();
+            Create.PrimaryKey("PK_Users_Id").OnTable("Users").Column("Id").Clustered();
         }
 
         public override void Down()

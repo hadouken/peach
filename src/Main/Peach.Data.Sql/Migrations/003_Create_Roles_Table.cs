@@ -17,7 +17,7 @@ namespace Peach.Data.Sql.Migrations
                 .WithColumn("User_Id").AsInt32().NotNullable()
                 .WithColumn("Role_Id").AsInt32().NotNullable();
 
-            Create.PrimaryKey("PK_Id").OnTable("Roles").Column("Id").Clustered();
+            Create.PrimaryKey("PK_Roles_Id").OnTable("Roles").Column("Id").Clustered();
 
             Create.ForeignKey()
                 .FromTable("Users_Roles")

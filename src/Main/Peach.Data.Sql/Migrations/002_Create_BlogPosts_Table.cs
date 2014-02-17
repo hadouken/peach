@@ -16,7 +16,7 @@ namespace Peach.Data.Sql.Migrations
                 .WithColumn("PublishedDate").AsDateTime().NotNullable()
                 .WithColumn("Content").AsString(int.MaxValue).NotNullable();
 
-            Create.PrimaryKey("PK_Id").OnTable("BlogPosts").Column("Id").Clustered();
+            Create.PrimaryKey("PK_BlogPosts_Id").OnTable("BlogPosts").Column("Id").Clustered();
 
             Create.ForeignKey("FK_BlogPosts_Users")
                 .FromTable("BlogPosts")

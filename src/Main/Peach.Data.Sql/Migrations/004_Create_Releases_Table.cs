@@ -19,8 +19,8 @@ namespace Peach.Data.Sql.Migrations
                 .WithColumn("Release_Id").AsInt32().NotNullable()
                 .WithColumn("DownloadUri").AsString(500).NotNullable();
 
-            Create.PrimaryKey("PK_Id").OnTable("Releases").Column("Id").Clustered();
-            Create.PrimaryKey("PK_Id").OnTable("ReleaseFiles").Column("Id").Clustered();
+            Create.PrimaryKey("PK_Releases_Id").OnTable("Releases").Column("Id").Clustered();
+            Create.PrimaryKey("PK_ReleaseFiles_Id").OnTable("ReleaseFiles").Column("Id").Clustered();
 
             Create.ForeignKey("FK_ReleaseFiles_Release")
                 .FromTable("ReleaseFiles")
