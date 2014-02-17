@@ -1,0 +1,8 @@
+﻿{
+  "title": "TeamCity build server",
+  "slug": "teamcity-build-server",
+  "date": "2014-01-26 23:08:18",
+  "content": "Just a quick notice.
+
+I've set up a [TeamCity build server](http://builds.nullreferenceexception.se/project.html?projectId=hdkn&tab=projectOverview) where you can find the latest alpha builds of Hadouken 2.0. They are at best unstable, and the installer needs some work, but they are somewhat functional."
+}
