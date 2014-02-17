@@ -1,4 +1,5 @@
 ﻿using FluentMigrator;
+using FluentMigrator.Runner.Extensions;
 
 namespace Peach.Data.Sql.Migrations
 {
@@ -8,12 +9,14 @@ namespace Peach.Data.Sql.Migrations
         public override void Up()
         {
             Create.Table("BlogPosts")
-                .WithColumn("Id").AsInt32().Identity().NotNullable().PrimaryKey()
+                .WithColumn("Id").AsInt32().Identity().NotNullable()
                 .WithColumn("User_Id").AsInt32().NotNullable()
                 .WithColumn("Title").AsString(100).NotNullable()
                 .WithColumn("Slug").AsString(100).NotNullable()
                 .WithColumn("PublishedDate").AsDateTime().NotNullable()
                 .WithColumn("Content").AsString(int.MaxValue).NotNullable();
+
+            Create.PrimaryKey("PK_Id").OnTable("BlogPosts").Column("Id").Clustered();
 
             Create.ForeignKey("FK_BlogPosts_Users")
                 .FromTable("BlogPosts")
