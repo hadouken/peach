@@ -1,5 +1,4 @@
 ﻿using FluentMigrator;
-using FluentMigrator.Runner.Extensions;
 using Peach.Data.Domain;
 
 namespace Peach.Data.Sql.Migrations
@@ -10,14 +9,13 @@ namespace Peach.Data.Sql.Migrations
         public override void Up()
         {
             Create.Table("Roles")
-                .WithColumn("Id").AsInt32().Identity().NotNullable()
-                .WithColumn("Name").AsString(100).NotNullable().Unique();
+                .WithColumn("Id").AsInt32().Identity().NotNullable().PrimaryKey()
+                .WithColumn("Name").AsString(100).NotNullable();
 
             Create.Table("Users_Roles")
+                .WithColumn("Id").AsInt32().Identity().NotNullable().PrimaryKey()
                 .WithColumn("User_Id").AsInt32().NotNullable()
                 .WithColumn("Role_Id").AsInt32().NotNullable();
-
-            Create.PrimaryKey("PK_Roles_Id").OnTable("Roles").Column("Id").Clustered();
 
             Create.ForeignKey()
                 .FromTable("Users_Roles")

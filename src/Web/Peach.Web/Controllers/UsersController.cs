@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.Messaging;
@@ -54,7 +55,7 @@ namespace Peach.Web.Controllers
 
             userName = userName.Trim();
 
-            if (_userRepository.GetByUserName(userName) != null)
+            if (_userRepository.GetAll().Any(u => string.Equals(userName, u.UserName, StringComparison.InvariantCultureIgnoreCase)))
                 return View();
 
             var user = new User
