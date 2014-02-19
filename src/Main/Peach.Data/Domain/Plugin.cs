@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Peach.Data.Domain
 {
     public class Plugin
     {
+        public Plugin()
+        {
+            Releases = new List<PluginRelease>();
+        }
+
         public virtual int Id { get; set; }
 
         public virtual string Name { get; set; }
@@ -15,5 +21,7 @@ namespace Peach.Data.Domain
         public virtual Uri Homepage { get; set; }
 
         public virtual string Description { get; set; }
+
+        public IList<PluginRelease> Releases { get; set; }
     }
 }

@@ -106,6 +106,20 @@ body {
     border-left: 3px solid #eee;
 }
 
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.bs-callout-info {
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+}
+
+.bs-callout-info h4 {
+    color: #5bc0de;
+}
+
 .bs-callout-warning {
     background-color: #fcf8f2;
     border-color: #f0ad4e;
