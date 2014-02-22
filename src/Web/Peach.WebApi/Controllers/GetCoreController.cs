@@ -8,6 +8,14 @@ namespace Peach.WebApi.Controllers
 {
     public class GetCoreController : ApiController
     {
+        private static readonly string[] CorePlugins =
+        {
+            "config",
+            "httpjsonrpc",
+            "torrents",
+            "web"
+        };
+
         private readonly IPluginRepository _pluginRepository;
 
         public GetCoreController(IPluginRepository pluginRepository)
@@ -18,7 +26,7 @@ namespace Peach.WebApi.Controllers
         [Route("get-core")]
         public IEnumerable<Uri> Get()
         {
-            var corePlugins = _pluginRepository.GetAll().Where(p => p.Name.StartsWith("core."));
+            var corePlugins = _pluginRepository.GetAll().Where(p => CorePlugins.Contains(p.Name));
 
             return (from plugin in corePlugins
                 let latestRelease = plugin.Releases.OrderByDescending(r => r.ReleaseDate).FirstOrDefault()

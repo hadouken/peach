@@ -1,4 +1,6 @@
-﻿using NHibernate;
+﻿using System.Linq;
+using NHibernate;
+using NHibernate.Linq;
 using Peach.Data.Domain;
 
 namespace Peach.Data.Sql.Repositories
@@ -7,6 +9,11 @@ namespace Peach.Data.Sql.Repositories
     {
         public PluginRepository(ISession session) : base(session)
         {
+        }
+
+        public Plugin GetByName(string name)
+        {
+            return Session.Query<Plugin>().Where(p => p.Name == name).SingleOrDefault();
         }
     }
 }

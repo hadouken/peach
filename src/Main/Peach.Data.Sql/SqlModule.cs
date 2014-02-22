@@ -5,6 +5,7 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using Peach.Core.Runtime;
+using Peach.Data.Sql.Conventions;
 using Peach.Data.Sql.Repositories;
 
 namespace Peach.Data.Sql
@@ -53,7 +54,7 @@ namespace Peach.Data.Sql
             return Fluently
                 .Configure()
                 .Database(MsSqlConfiguration.MsSql2008.ConnectionString(_connectionString))
-                .Mappings(mapConfig => mapConfig.FluentMappings.AddFromAssemblyOf<SqlModule>())
+                .Mappings(mapConfig => mapConfig.FluentMappings.AddFromAssemblyOf<SqlModule>().Conventions.Add(new SemanticVersionTypeConvention()))
                 .BuildSessionFactory();
         }
     }

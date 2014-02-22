@@ -22,6 +22,6 @@ namespace Peach.Data.Domain
 
         public virtual string Description { get; set; }
 
-        public IList<PluginRelease> Releases { get; set; }
+        public virtual IList<PluginRelease> Releases { get; set; }
     }
 }

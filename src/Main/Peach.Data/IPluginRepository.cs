@@ -5,5 +5,6 @@ namespace Peach.Data
 {
     public interface IPluginRepository : IRepository<Plugin>
     {
+        Plugin GetByName(string name);
     }
 }

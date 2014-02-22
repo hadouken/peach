@@ -61,8 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conventions\SemanticVersionTypeConvention.cs" />
     <Compile Include="ISchemaMigrator.cs" />
     <Compile Include="Mappings\BlogPostMap.cs" />
+    <Compile Include="Mappings\PluginMap.cs" />
+    <Compile Include="Mappings\PluginReleaseMap.cs" />
     <Compile Include="Mappings\ReleaseFileMap.cs" />
     <Compile Include="Mappings\ReleaseMap.cs" />
     <Compile Include="Mappings\RoleMap.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="Migrations\001_Create_Users_Table.cs" />
     <Compile Include="Migrations\003_Create_Roles_Table.cs" />
     <Compile Include="Migrations\002_Create_BlogPosts_Table.cs" />
+    <Compile Include="Migrations\005_Create_Plugins_Table.cs" />
     <Compile Include="Migrations\004_Create_Releases_Table.cs" />
     <Compile Include="Repositories\BlogRepository.cs" />
     <Compile Include="Repositories\PluginRepository.cs" />
@@ -80,6 +84,7 @@
     <Compile Include="SqlModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlSchemaMigrator.cs" />
+    <Compile Include="UserTypes\SemanticVersionType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

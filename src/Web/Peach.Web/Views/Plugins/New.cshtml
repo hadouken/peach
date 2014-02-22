@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Upload plugin package | Hadouken";
+}
+
+<h3>Upload plugin package</h3>
+
+<div class="bs-callout bs-callout-info">
+    <p>From here you can upload new plugins and new releases for existing plugins. If a plugin already exists
+        with the name you've specified, the package you upload will be added as a new release for that plugin.</p>
+</div>
+
+<form class="form-horizontal" role="form" action="@Url.Action("New")" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="package" class="control-label col-lg-2">Package file</label>
+        <div class="col-lg-10">
+            <input type="file" class="form-control" id="package" name="package"/>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </div>
+    </div>
+</form>
