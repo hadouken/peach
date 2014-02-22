@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Bootstrapping\LifetimeProvider.cs" />
     <Compile Include="Bootstrapping\WebApiConfig.cs" />
+    <Compile Include="Controllers\GetCoreController.cs" />
     <Compile Include="Controllers\PluginsController.cs" />
     <Compile Include="Controllers\ReleasesController.cs" />
     <Compile Include="Global.asax.cs">
