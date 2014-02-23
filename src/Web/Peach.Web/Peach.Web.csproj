@@ -252,6 +252,7 @@
     <Compile Include="HttpModules\UserAuthModule.cs" />
     <Compile Include="Models\BlogListDto.cs" />
     <Compile Include="Models\EditBlogPostDto.cs" />
+    <Compile Include="Models\EditPluginDto.cs" />
     <Compile Include="Models\NewBlogPostDto.cs" />
     <Compile Include="Models\NewReleaseDto.cs" />
     <Compile Include="Models\PluginDetailsDto.cs" />
@@ -274,6 +275,7 @@
     <Content Include="Views\Download\New.cshtml" />
     <Content Include="Views\Plugins\New.cshtml" />
     <Content Include="Views\Plugins\Details.cshtml" />
+    <Content Include="Views\Plugins\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

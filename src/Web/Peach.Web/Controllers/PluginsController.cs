@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -79,10 +78,43 @@ namespace Peach.Web.Controllers
             var currentUser = _userRepository.GetById(Convert.ToInt32(User.Identity.Name));
             if (currentUser == plugin.Author || User.IsInRole(Role.Administrator))
             {
-                return View(plugin);
+                return View(new EditPluginDto
+                    {
+                        Description = plugin.Description,
+                        Homepage = plugin.Homepage,
+                        Name = plugin.Name
+                    });
             }
 
             return new HttpUnauthorizedResult();
+        }
+
+        [Authorize(Roles = Role.PluginDeveloper)]
+        [HttpPost]
+        [Route("plugins/edit/{pluginId}")]
+        public ActionResult Edit(string pluginId, EditPluginDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+
+            var plugin = _pluginRepository.GetByName(pluginId);
+            if (plugin == null)
+            {
+                return HttpNotFound();
+            }
+
+            var currentUser = _userRepository.GetById(Convert.ToInt32(User.Identity.Name));
+            if (currentUser == plugin.Author || User.IsInRole(Role.Administrator))
+            {
+                plugin.Homepage = dto.Homepage;
+                plugin.Description = dto.Description;
+
+                _pluginRepository.Update(plugin);
+            }
+
+            return RedirectToAction("Details", new {pluginId});
         }
 
         [Authorize(Roles = Role.PluginDeveloper)]
