@@ -14,6 +14,7 @@ using Peach.Core.SemVer;
 using Peach.Core.Text;
 using Peach.Data;
 using Peach.Data.Domain;
+using Peach.Web.Models;
 
 namespace Peach.Web.Controllers
 {
@@ -53,7 +54,35 @@ namespace Peach.Web.Controllers
                 return HttpNotFound();
             }
 
-            return View(plugin);
+            var dto = new PluginDetailsDto {Plugin = plugin};
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var currentUser = _userRepository.GetById(Convert.ToInt32(User.Identity.Name));
+                dto.ShowEditLink = (currentUser == plugin.Author || User.IsInRole(Role.Administrator));
+            }
+
+            return View(dto);
+        }
+
+        [Authorize(Roles = Role.PluginDeveloper)]
+        [Route("plugins/edit/{pluginId}")]
+        public ActionResult Edit(string pluginId)
+        {
+            var plugin = _pluginRepository.GetByName(pluginId);
+
+            if (plugin == null)
+            {
+                return HttpNotFound();
+            }
+
+            var currentUser = _userRepository.GetById(Convert.ToInt32(User.Identity.Name));
+            if (currentUser == plugin.Author || User.IsInRole(Role.Administrator))
+            {
+                return View(plugin);
+            }
+
+            return new HttpUnauthorizedResult();
         }
 
         [Authorize(Roles = Role.PluginDeveloper)]

@@ -254,6 +254,7 @@
     <Compile Include="Models\EditBlogPostDto.cs" />
     <Compile Include="Models\NewBlogPostDto.cs" />
     <Compile Include="Models\NewReleaseDto.cs" />
+    <Compile Include="Models\PluginDetailsDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿@using Peach.Data.Domain
-@model Plugin
+@model Peach.Web.Models.PluginDetailsDto
            
 @helper Markdown(string input)
 {
@@ -8,11 +8,19 @@
 }
 
 @{
-    ViewBag.Title = @Model.Name + " | Plugins | Hadouken";
-    var latestRelease = Model.Releases.OrderByDescending(r => r.ReleaseDate).FirstOrDefault();
+    ViewBag.Title = @Model.Plugin.Name + " | Plugins | Hadouken";
+    var latestRelease = Model.Plugin.Releases.OrderByDescending(r => r.ReleaseDate).FirstOrDefault();
 }
 
-<h3>@Model.Name <small>@(latestRelease != null ? latestRelease.Version.ToString() : "")</small></h3>
+@if (Model.ShowEditLink)
+{
+    @section Actions
+    {
+        @Html.ActionLink("Edit details", "Edit", new {pluginId = Model.Plugin.Name})
+    }
+}
+
+<h3>@Model.Plugin.Name <small>@(latestRelease != null ? latestRelease.Version.ToString() : "")</small></h3>
 
 @if (latestRelease == null)
 {
@@ -33,12 +41,12 @@ else
             </tr>
         </thead>
             
-        @foreach (var release in Model.Releases.OrderByDescending(r => r.ReleaseDate))
+        @foreach (var release in Model.Plugin.Releases.OrderByDescending(r => r.ReleaseDate))
         {
             <tr>
                 <td>@release.Version</td>
                 <td>@release.ReleaseDate.ToString("yyyy-MM-dd")</td>
-                <td><a href="@release.DownloadUri">@Model.Name-@(release.Version).zip</a></td>
+                <td><a href="@release.DownloadUri">@Model.Plugin.Name-@(release.Version).zip</a></td>
             </tr>
         }
     </table>
