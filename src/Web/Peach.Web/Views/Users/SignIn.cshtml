@@ -20,7 +20,7 @@
 
 <h3>Sign in</h3>
 
-<form action="@Url.Action("Authenticate")" method="POST" id="openid_form">
+<form action="@Url.Action("Authenticate", new{returnUrl = Request.QueryString["ReturnUrl"]})" method="POST" id="openid_form">
     <input type="hidden" name="action" value="verify" />
 
     <fieldset>
