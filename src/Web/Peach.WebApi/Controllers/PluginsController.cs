@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Peach.Data;
+using Peach.WebApi.Models;
 
 namespace Peach.WebApi.Controllers
 {
@@ -17,9 +18,27 @@ namespace Peach.WebApi.Controllers
         }
 
         // GET plugins/
-        public IEnumerable<string> Get()
+        public IEnumerable<PluginListItem> Get()
         {
-            return new string[] { "value1", "value2" };
+            var plugins = _pluginRepository.GetAll();
+
+            return (from plugin in plugins
+                let latestRelease = (from release in plugin.Releases
+                    orderby release.ReleaseDate descending
+                    select new ReleaseItem
+                    {
+                        DownloadUri = release.DownloadUri,
+                        ReleaseDate = release.ReleaseDate,
+                        Version = release.Version
+                    }).FirstOrDefault()
+                select new PluginListItem
+                {
+                    Author = plugin.Author.UserName,
+                    Description = plugin.Description,
+                    Homepage = plugin.Homepage,
+                    Id = plugin.Name,
+                    LatestRelease = latestRelease
+                });
         }
 
         // GET plugins/plugin.name
@@ -33,21 +52,19 @@ namespace Peach.WebApi.Controllers
                 return new HttpResponseMessage(HttpStatusCode.NotFound);
             }
 
-            var latestRelease = plugin.Releases.OrderByDescending(r => r.ReleaseDate).FirstOrDefault();
-
-            var dto = new
+            var dto = new PluginDetailsItem
             {
-                name = plugin.Name,
-                author = plugin.Author.UserName,
-                description = plugin.Description,
-                latest_release = (latestRelease == null
-                    ? null
-                    : new
+                Author = plugin.Author.UserName,
+                Description = plugin.Description,
+                Homepage = plugin.Homepage,
+                Id = plugin.Name,
+                Releases = (from release in plugin.Releases
+                    orderby release.ReleaseDate descending
+                    select new ReleaseItem
                     {
-                        download_uri = latestRelease.DownloadUri.ToString(),
-                        release_date = latestRelease.ReleaseDate,
-                        release_notes = latestRelease.ReleaseNotes,
-                        version = latestRelease.Version.ToString()
+                        DownloadUri = release.DownloadUri,
+                        ReleaseDate = release.ReleaseDate,
+                        Version = release.Version
                     })
             };
 

@@ -2,6 +2,7 @@
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
+using Newtonsoft.Json.Serialization;
 using Peach.Data.Sql;
 
 namespace Peach.WebApi.Bootstrapping
@@ -22,8 +23,13 @@ namespace Peach.WebApi.Bootstrapping
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 
             // Only support JSON
+            var formatter = new JsonMediaTypeFormatter
+            {
+                SerializerSettings = {ContractResolver = new CamelCasePropertyNamesContractResolver()}
+            };
+
             config.Formatters.Clear();
-            config.Formatters.Add(new JsonMediaTypeFormatter());
+            config.Formatters.Add(formatter);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
