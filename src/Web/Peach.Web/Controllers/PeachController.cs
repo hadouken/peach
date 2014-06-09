@@ -16,6 +16,11 @@ namespace Peach.Web.Controllers
             _userRepository = userRepository;
         }
 
+        protected IConfiguration Configuration
+        {
+            get { return _configuration; }
+        }
+
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
             base.OnActionExecuted(filterContext);

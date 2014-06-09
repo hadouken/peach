@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using Octokit;
 using Peach.Core;
 using Peach.Core.Text;
 using Peach.Data.Sql;
@@ -26,6 +27,9 @@ namespace Peach.Web.Bootstrapping
 
             // Register configuration
             builder.RegisterType<AppConfigConfiguration>().As<IConfiguration>().InstancePerHttpRequest();
+
+            // Register GitHub client
+            builder.Register<IGitHubClient>(c => new GitHubClient(new ProductHeaderValue("Hadouken")));
 
             return builder.Build();
         }
