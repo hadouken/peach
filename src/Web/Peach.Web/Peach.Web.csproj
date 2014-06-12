@@ -245,6 +245,7 @@
     <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\FeaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstallController.cs" />
     <Compile Include="Controllers\PeachController.cs" />
     <Compile Include="Controllers\PluginsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -288,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Install\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Main\Peach.Core\Peach.Core.csproj">

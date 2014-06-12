@@ -128,3 +128,7 @@ body {
 .bs-callout-warning h4 {
     color: #f0ad4e;
 }
+
+.methods {
+    margin-top: 15px;
+}
