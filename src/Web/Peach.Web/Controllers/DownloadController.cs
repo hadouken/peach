@@ -6,36 +6,20 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Octokit;
 using Peach.Core;
-using Peach.Core.IO;
 using Peach.Data;
-using Peach.Data.Domain;
-using Peach.Web.Models;
-using Release = Peach.Data.Domain.Release;
 
 namespace Peach.Web.Controllers
 {
     public class DownloadController : PeachController
     {
-        private readonly IReleaseRepository _releaseRepository;
-        private readonly IBlobStorage _blobStorage;
         private readonly IGitHubClient _gitHubClient;
 
         public DownloadController(IConfiguration configuration,
             IUserRepository userRepository,
-            IReleaseRepository releaseRepository,
-            IBlobStorage blobStorage,
             IGitHubClient gitHubClient)
             : base(configuration, userRepository)
         {
-            _releaseRepository = releaseRepository;
-            _blobStorage = blobStorage;
             _gitHubClient = gitHubClient;
-        }
-
-        public ActionResult Index()
-        {
-            var release = _releaseRepository.GetLatest();
-            return View(release);
         }
 
         [Route("download/v{version}")]
@@ -50,51 +34,13 @@ namespace Peach.Web.Controllers
             return GetRedirectForRelease(null);
         }
 
-        [Authorize(Roles = Role.Administrator)]
-        public ActionResult New()
-        {
-            return View(new NewReleaseDto());
-        }
-
-        [Authorize(Roles = Role.Administrator)]
-        [HttpPost]
-        public async Task<ActionResult> New(NewReleaseDto dto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(dto);
-            }
-
-            var release = new Release
-            {
-                ReleaseNotes = dto.ReleaseNotes,
-                Version = dto.Version
-            };
-
-            var container = _blobStorage.GetContainer("releases");
-            foreach (var file in dto.AttachedFiles)
-            {
-                var blob = await container.CreateBlob(file.FileName, file.InputStream);
-
-                release.Files.Add(new ReleaseFile
-                {
-                    DownloadUri = blob.Uri,
-                    Release = release
-                });
-            }
-
-            _releaseRepository.Insert(release);
-
-            return RedirectToAction("Index");
-        }
-
         private async Task<ActionResult> GetRedirectForRelease(string version)
         {
             var org = Configuration.Settings["GitHub:OrgName"];
             var repo = Configuration.Settings["GitHub:RepoName"];
 
             var releases = await _gitHubClient.Release.GetAll(org, repo);
-            Octokit.Release release = string.IsNullOrEmpty(version)
+            var release = string.IsNullOrEmpty(version)
                 ? releases.OrderByDescending(r => r.PublishedAt).FirstOrDefault()
                 : releases.FirstOrDefault(r => r.TagName == "v" + version);
 

@@ -243,11 +243,9 @@
     <Compile Include="Bootstrapping\RouteRegistrator.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
-    <Compile Include="Controllers\FeaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstallController.cs" />
     <Compile Include="Controllers\PeachController.cs" />
-    <Compile Include="Controllers\PluginsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Extensions\BlogPostExtensions.cs" />
     <Compile Include="Global.asax.cs">
@@ -268,18 +266,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\HadoukenLayout.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\Plugins\Index.cshtml" />
     <Content Include="Views\Users\SignIn.cshtml" />
     <Content Include="Views\Users\New.cshtml" />
     <Content Include="Views\Blog\New.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Features\Index.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
-    <Content Include="Views\Download\Index.cshtml" />
-    <Content Include="Views\Download\New.cshtml" />
-    <Content Include="Views\Plugins\New.cshtml" />
-    <Content Include="Views\Plugins\Details.cshtml" />
-    <Content Include="Views\Plugins\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
