@@ -13,19 +13,29 @@
         <li data-target="#feature-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#feature-carousel" data-slide-to="1"></li>
         <li data-target="#feature-carousel" data-slide-to="2"></li>
+        <li data-target="#feature-carousel" data-slide-to="3"></li>
+        <li data-target="#feature-carousel" data-slide-to="4"></li>
     </ol>
 
     <div class="carousel-inner">
         <div class="item active">
-            <img src="@Url.Content("~/content/features/setup.png")" alt="..." />
+            <img src="@Url.Content("~/content/features/login.png")" alt="..." />
         </div>
 
         <div class="item">
-            <img src="@Url.Content("~/content/features/plugins.png")" alt="..." />
+            <img src="@Url.Content("~/content/features/torrents.png")" alt="..." />
         </div>
 
         <div class="item">
-            <img src="@Url.Content("~/content/features/torrentconfig.png")" alt="..." />
+            <img src="@Url.Content("~/content/features/torrent_details.png")" alt="..." />
+        </div>
+        
+        <div class="item">
+            <img src="@Url.Content("~/content/features/pushbullet.png")" alt="..." />
+        </div>
+        
+        <div class="item">
+            <img src="@Url.Content("~/content/features/adv_settings.png")" alt="..." />
         </div>
     </div>
 
@@ -39,21 +49,64 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h3>Friendly interface</h3>
+        <h3>A powerful BitTorrent client for Windows</h3>
         
-        <p>The first time you open up the web interface, we will guide you through the configuring process. The wizard is completely optional (like most of Hadoukens configuration) and is there purely to get you going quickly.</p>
-        
-        <p>We try to have sensible defaults everywhere and keep mandatory settings to a minimum. The only configuration we want you to to is the one that provides value, like telling Hadouken to subscribe to a specific RSS feed, or
-        setting up watched folders.</p>
+        <p>
+            Hadouken is a powerful, headless BitTorrent client for Windows. It runs as a Windows Service and you use the bundled web interface to manage it. Being headless, Hadouken is
+            perfect for media servers where remote administration is the bee's knees.
+        </p>
+
+        <h4>Built on <em>libtorrent</em></h4>
+
+        <p>Hadouken is built on <a href="http://www.libtorrent.org/">libtorrent</a> &mdash; a powerful and efficient C++ BitTorrent implementation used in various big-name clients.</p>
+
+        <h4>Written in C#</h4>
+
+        <p>By writing Hadouken in C#, we make it easy for contributors and developers to fix, enhance and create new features. Hundreds of unit tests make sure we do not accidentally break anything.</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-lg-12">
+        <h3>Remote administration</h3>
+
+        <p>
+            With the bundled web interface you can manage Hadouken from any computer or device with internet access. The interface is built with the Bootstrap framework, making it responsive and compatible with
+            almost every browser.
+        </p>
+        
+        <h4>HTTP/JSONRPC API</h4>
+        
+        <p>
+            Hadouken comes with a HTTP/JSONRPC API allowing any application to integrate with Hadouken. Everything you can do via the web interface can also be done with JSONRPC &mdash; the web interface uses the exact same API.
+        </p>
+        
+        <h4>PowerShell</h4>
+        
+        <p>The Hadouken PowerShell Cmdlets can be installed separate from Hadouken and gives you a powerful way of managing your Hadouken instance from a remote (or local) computer.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <h3>Push notifications</h3>
+        
+        <p>Hadouken supports a variety of 3rd party services for sending push notifications on various events, such as when a torrent is added or downloaded.</p>
+        
+        <h4>Supported services</h4>
+        
+        <ul>
+            <li><a href="https://www.pushbullet.com">Pushbullet</a></li>
+            <li><a href="https://pushover.net/">Pushover</a></li>
+            <li>SMTP integration</li>
+        </ul>
+    </div>
+    
+    <div class="col-lg-6">
         <h3>Plugins</h3>
-
-        <p>The plugin support in Hadouken is awesome for end users and developers alike. From the web interface it is super easy to install new plugins or upgrade existing ones.</p>
-
-        <p>For developers, the plugin API will provide you with everything you need to get going. We dogfood the API daily, and most of the core functionality in Hadouken is actually a plugin. Therefore you can rely on the API being stable and well-proven.</p>
+        
+        <p>To increase versatility, Hadouken has an awesome plugin framework letting developers extend Hadouken with ease.</p>
+        
+        <p>For more information on how to write extensions, <a href="https://github.com/hadouken/hadouken/wiki">see the wiki</a>.</p>
     </div>
 </div>

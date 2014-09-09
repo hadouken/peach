@@ -243,6 +243,7 @@
     <Compile Include="Bootstrapping\RouteRegistrator.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\FeaturesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstallController.cs" />
     <Compile Include="Controllers\PeachController.cs" />
