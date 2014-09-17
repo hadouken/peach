@@ -82,6 +82,10 @@ body {
     margin-bottom: 40px;
 }
 
+.post img {
+    max-width: 100%;
+}
+
 .post:last-of-type {
     margin-bottom: 0;
 }
