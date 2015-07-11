@@ -8,85 +8,42 @@
     <h1>Hadouken</h1>
     
     <p class="lead">
-        Hadouken is a headless BitTorrent client for Windows. It is written
-        in C# and is designed to run as a Windows Service managed through a
-        built-in web interface.
+        Hadouken is a headless, cross-platform BitTorrent client with a low memory footprint.
+        It is perfect for seedboxes, media servers and other server setups.
     </p>
     
     <p>
-        <a class="btn btn-lg btn-success" href="@Url.Action("Latest", "Download")">Download</a>
+        <a class="btn btn-lg btn-success" href="https://github.com/hadouken/hadouken/releases/latest">Download</a>
     </p>
-</div>
-
-<div class="row marketing">
-    <div class="col-sm-12">
-        <h2>Quick start</h2>
-        
-        <div class="col-sm-12">
-            <p>Here are the most common ways of getting started with Hadouken.</p>
-        </div>
-        
-        <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a href="#chocolatey" data-toggle="tab">Chocolatey</a></li>
-            <li><a href="#powershell" data-toggle="tab">Powershell</a></li>
-            <li><a href="#manual" data-toggle="tab">Manual</a></li>
-        </ul>
-        
-        <div class="methods">
-            <div class="tab-content">
-                <div class="tab-pane active" id="chocolatey">
-                    <p><a href="https://chocolatey.org">Chocolatey</a> is a package manager for Windows. Hadouken has <a href="https://chocolatey.org/packages/hadouken">an official Chocolatey package</a>
-                        to make it super easy to get started.</p>
-
-                    <pre>CMD&gt; <strong>cinst hadouken</strong>
-CMD&gt; <strong>start http://localhost:7890/</strong></pre>
-                </div>
-                
-                <div class="tab-pane" id="powershell">
-                    <p>Download and install Hadouken with a single line of <em>Powershell</em>.</p>
-                    
-                    <pre>CMD> <strong>@@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('http://www.hdkn.net/install.ps1'))"</strong>
-CMD> <strong>start http://localhost:7890/</strong></pre>
-                </div>
-
-                <div class="tab-pane" id="manual">
-                    <p>Manual installation of Hadouken is a piece of cake.</p>
-                    
-                    <ol>
-                        <li><a href="http://www.hdkn.net/download/latest">Download the latest version of Hadouken.</a></li>
-                        <li>Run the installer.</li>
-                        <li>Point your browser to <code>http://localhost:7890/</code> (specify port accordingly).</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="row marketing">
     <div class="col-sm-6">
-        <h4><i class="fa fa-github"></i> Open source</h4>
+        <h3><i class="fa fa-github"></i> Open source
+        </h3>
         <p>
             We believe in open source and so should you. <a href="https://github.com/hadouken/hadouken">The source code for Hadouken</a>
             is hosted on GitHub and includes everything needed to build it yourself.
         </p>
-        
-        <h4><i class="fa fa-puzzle-piece"></i> Plugins, plugins and plugins</h4>
+
+        <h3><i class="fa fa-puzzle-piece"></i> Plugins
+        </h3>
         <p>
-            In Hadouken, plugins are first-class citizens. In fact, we believe so much in plugins that
-            much of the core functionality is implemented as plugins. Plugins are easy to install and
-            maintain, and we have loads of them!
+            Hadouken features a powerful JavaScript API and is bundled with a few different plugins
+            covering the basic needs. The API is well-documented and easy to use.
         </p>
     </div>
-    
+
     <div class="col-sm-6">
-        <h4><i class="fa fa-group"></i> Community driven</h4>
+        <h3><i class="fa fa-group"></i> Community driven
+        </h3>
         <p>
             It is the community that makes Hadouken so frickin' awesome. Ideas, plugins and general epicness
             all comes from the community. We &lt;3 you.
         </p>
-        
-        <h4><i class="fa fa-smile-o"></i> No ads, no bullshit</h4>
+
+        <h3><i class="fa fa-smile-o"></i> No ads, no bullshit
+        </h3>
         <p>
             We aim to make you happy, and that is why you will never see ads on this site, in the installer
             or in the web interface. We also do not try to shove crapware and toolbars down your throat.

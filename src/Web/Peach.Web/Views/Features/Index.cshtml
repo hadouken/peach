@@ -13,29 +13,19 @@
         <li data-target="#feature-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#feature-carousel" data-slide-to="1"></li>
         <li data-target="#feature-carousel" data-slide-to="2"></li>
-        <li data-target="#feature-carousel" data-slide-to="3"></li>
-        <li data-target="#feature-carousel" data-slide-to="4"></li>
     </ol>
 
     <div class="carousel-inner">
-        <div class="item active">
-            <img src="@Url.Content("~/content/features/login.png")" alt="..." />
-        </div>
-
         <div class="item">
             <img src="@Url.Content("~/content/features/torrents.png")" alt="..." />
         </div>
 
         <div class="item">
-            <img src="@Url.Content("~/content/features/torrent_details.png")" alt="..." />
+            <img src="@Url.Content("~/content/features/add_torrent.png")" alt="..."/>
         </div>
-        
+
         <div class="item">
-            <img src="@Url.Content("~/content/features/pushbullet.png")" alt="..." />
-        </div>
-        
-        <div class="item">
-            <img src="@Url.Content("~/content/features/adv_settings.png")" alt="..." />
+            <img src="@Url.Content("~/content/features/config.png")" alt="..." />
         </div>
     </div>
 
@@ -49,20 +39,20 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h3>A powerful BitTorrent client for Windows</h3>
+        <h3>A powerful BitTorrent client</h3>
         
         <p>
-            Hadouken is a powerful, headless BitTorrent client for Windows. It runs as a Windows Service and you use the bundled web interface to manage it. Being headless, Hadouken is
-            perfect for media servers where remote administration is the bee's knees.
+            Hadouken is a cross-platform, headless BitTorrent client. It runs in the background (Windows Service or daemon) and you can use a
+            variety of clients to manage it.
         </p>
 
         <h4>Built on <em>libtorrent</em></h4>
 
-        <p>Hadouken is built on <a href="http://www.libtorrent.org/">libtorrent</a> &mdash; a powerful and efficient C++ BitTorrent implementation used in various big-name clients.</p>
+        <p>Hadouken is built on <a href="http://www.libtorrent.org/">libtorrent</a> &mdash; a powerful and efficient C++ BitTorrent library.</p>
 
-        <h4>Written in C#</h4>
+        <h4>Written in C++</h4>
 
-        <p>By writing Hadouken in C#, we make it easy for contributors and developers to fix, enhance and create new features. Hundreds of unit tests make sure we do not accidentally break anything.</p>
+        <p>By writing Hadouken in modern, clean C++ we stay close to the hardware, keeping memory usage low and performance high.</p>
     </div>
 </div>
 
@@ -80,10 +70,6 @@
         <p>
             Hadouken comes with a HTTP/JSONRPC API allowing any application to integrate with Hadouken. Everything you can do via the web interface can also be done with JSONRPC &mdash; the web interface uses the exact same API.
         </p>
-        
-        <h4>PowerShell</h4>
-        
-        <p>The Hadouken PowerShell Cmdlets can be installed separate from Hadouken and gives you a powerful way of managing your Hadouken instance from a remote (or local) computer.</p>
     </div>
 </div>
 
@@ -98,15 +84,14 @@
         <ul>
             <li><a href="https://www.pushbullet.com">Pushbullet</a></li>
             <li><a href="https://pushover.net/">Pushover</a></li>
-            <li>SMTP integration</li>
         </ul>
     </div>
     
     <div class="col-lg-6">
         <h3>Plugins</h3>
         
-        <p>To increase versatility, Hadouken has an awesome plugin framework letting developers extend Hadouken with ease.</p>
+        <p>To increase versatility, Hadouken has an awesome plugin API which lets developers extend Hadouken with ease.</p>
         
-        <p>For more information on how to write extensions, <a href="https://github.com/hadouken/hadouken/wiki">see the wiki</a>.</p>
+        <p>For more information on how to write plugins, <a href="http://docs.hdkn.net/en/latest/for-developers/javascript-api.html">see the docs</a>.</p>
     </div>
 </div>

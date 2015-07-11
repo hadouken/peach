@@ -135,11 +135,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Features\adv_settings.png" />
-    <Content Include="Content\Features\login.png" />
-    <Content Include="Content\Features\pushbullet.png" />
+    <Content Include="Content\Features\add_torrent.png" />
+    <Content Include="Content\Features\config.png" />
     <Content Include="Content\Features\torrents.png" />
-    <Content Include="Content\Features\torrent_details.png" />
     <Content Include="Content\openid-selector\images.large\aol.gif" />
     <Content Include="Content\openid-selector\images.large\facebook.gif" />
     <Content Include="Content\openid-selector\images.large\google.gif" />
